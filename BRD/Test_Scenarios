@@ -1,0 +1,47 @@
+WebTable:
+Automation Test Cases
+	1.	Verify Row Count: Ensure the number of rows in the table matches the expected count (12 rows).
+	2.	Fetch and Print Data: Extract all table data and print it in the console.
+	3.	Search for a Specific Record: Validate that “Maria Lopez” exists in the table with the correct role and location.
+	4.	Filter by Location: Extract rows for employees in “USA” and validate the data.
+	5.	Dynamic Validation: Verify if a specific role (e.g., “Cloud Engineer”) exists in the table.
+===========================
+
+IFrame:
+
+Possible Scenarios to Validate IFrame
+	1.	Verify the IFrame Is Present.
+	2.	Switch to the IFrame.
+	3.	Verify Content Inside the IFrame.
+	4.	Perform Actions Within the IFrame.
+	5.	Switch Back to the Main Content.
+	
+=====================
+
+Dropdown List:
+
+Common Dropdown Scenarios
+	1.	Verify Dropdown is Present.
+	2.	Verify All Options in Dropdown.
+	3.	Select an Option by Visible Text.
+	4.	Select an Option by Index.
+	5.	Verify Selected Option.
+	
+================
+CheckBox:
+
+Test Scenarios Covered
+	1.	Navigate to Checkbox Menu:
+	•	Ensures the checkbox menu is accessible and visible.
+	2.	Select a Checkbox:
+	•	Selects a specific checkbox (e.g., “Reading”) and verifies its state.
+	3.	Deselect a Checkbox:
+	•	Deselects a specific checkbox and verifies it is no longer selected.
+	4.	Select All Checkboxes:
+	•	Iterates through all checkboxes, selects them, and verifies all are selected.
+	5.	Verify No Initial Selections:
+	•	Checks that no checkboxes are selected initially.
+	6.	Count Selected Checkboxes:
+	•	Dynamically counts and validates the number of selected checkboxes.
+	
+=============

@@ -1,0 +1,53 @@
+TestAutomationFramework:
+
+├── src
+│   ├── main
+│   │   ├── java
+│   │   │   ├── base
+│   │   │   │   └── BaseTest.java
+│   │   │   ├── utils
+│   │   │   │   ├── ConfigReader.java
+│   │   │   │   ├── WebDriverUtils.java
+│   │   │   │   ├── ElementUtils.java
+│   │   │   │   ├── TableUtils.java
+│   │   │   │   ├── DropdownUtils.java
+│   │   │   │   └── FrameUtils.java
+│   │   │   ├── pages
+│   │   │   │   ├── TextBoxPage.java
+│   │   │   │   ├── RadioButtonPage.java
+│   │   │   │   ├── CheckBoxPage.java
+│   │   │   │   ├── DropdownPage.java
+│   │   │   │   ├── AlertsAndPopupsPage.java
+│   │   │   │   ├── IFramePage.java
+│   │   │   │   └── WebTablePage.java
+│   │   │   ├── reports
+│   │   │   │   └── ExtentManager.java
+│   ├── test
+│   │   ├── java
+│   │   │   ├── tests
+│   │   │   │   ├── TextBoxTest.java
+│   │   │   │   ├── RadioButtonTest.java
+│   │   │   │   ├── CheckBoxTest.java
+│   │   │   │   ├── DropdownTest.java
+│   │   │   │   ├── AlertsAndPopupTest.java
+│   │   │   │   ├── IFrameTest.java
+│   │   │   │   └── WebTableTest.java
+│   │   │   ├── listeners
+│   │   │   │   └── TestListeners.java
+├── pom.xml
+├── testng.xml
+
+Reporter:
+
+TestAutomationFramework
+├── src
+│   ├── main
+│   │   ├── java
+│   │   │   ├── base
+│   │   │   │   └── BaseTest.java
+│   │   │   ├── reports
+│   │   │   │   └── ExtentManager.java
+│   ├── test
+│   │   ├── java
+│   │   │   ├── listeners
+│   │   │   │   └── TestListeners.java

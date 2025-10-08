@@ -1,0 +1,52 @@
+[
+        {
+            "name": "John Doe",
+            "email": "johndoe@example.com",
+            "address": "123 Main St, Springfield, IL"
+        },
+        {
+            "name": "Jane Smith",
+            "email": "janesmith@example.com",
+            "address": "456 Elm St, Seattle, WA"
+        },
+        {
+            "name": "Michael Johnson",
+            "email": "michaelj@example.com",
+            "address": "789 Oak St, Austin, TX"
+        },
+        {
+            "name": "Emily Davis",
+            "email": "emilydavis@example.com",
+            "address": "321 Pine St, Denver, CO"
+        },
+        {
+            "name": "Robert Brown",
+            "email": "robertbrown@example.com",
+            "address": "654 Cedar St, Boston, MA"
+        },
+        {
+            "name": "Linda Wilson",
+            "email": "lindawilson@example.com",
+            "address": "987 Birch St, Miami, FL"
+        },
+        {
+            "name": "David Lee",
+            "email": "davidlee@example.com",
+            "address": "246 Maple St, Phoenix, AZ"
+        },
+        {
+            "name": "Sarah Miller",
+            "email": "sarahmiller@example.com",
+            "address": "135 Ash St, Portland, OR"
+        },
+        {
+            "name": "James Taylor",
+            "email": "jamestaylor@example.com",
+            "address": "579 Willow St, San Francisco, CA"
+        },
+        {
+            "name": "Elizabeth Moore",
+            "email": "elizabethmoore@example.com",
+            "address": "864 Spruce St, Chicago, IL"
+        }
+    ]

@@ -1,0 +1,21 @@
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="ZSolution Automation Regression Suite" verbose="1" parallel="false">
+
+    <!-- Extent Report Listener -->
+    <listeners>
+        <listener class-name="utils.ExtentTestNGListener" />
+    </listeners>
+
+    <test name="Regression Test Suite">
+        <classes>
+            <class name="tests.LoginPageTest"/>
+            <class name="tests.RadioButtonTest"/>
+            <class name="tests.TextBoxTest"/>
+            <class name="tests.CheckBoxTest"/>
+            <class name="tests.DropdownTest"/>
+            <class name="tests.AlertsAndPopupTest"/>
+            <class name="tests.WebTableTest"/>
+            <class name="tests.IFrameTest"/>
+        </classes>
+    </test>
+</suite>

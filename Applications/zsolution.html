@@ -1,0 +1,609 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>zSolution</title>
+  <style>
+    body {
+      font-family: 'Arial', sans-serif;
+      margin: 0;
+      display: flex;
+      height: 100vh;
+      background: linear-gradient(to bottom, #e6f7ff, #ffffff);
+      color: #333;
+    }
+    .sidebar {
+      width: 220px;
+      background: linear-gradient(145deg, #34495e, #2c3e50);
+      color: white;
+      display: flex;
+      flex-direction: column;
+      padding: 10px;
+      box-shadow: 3px 0 10px rgba(0, 0, 0, 0.1);
+    }
+    .sidebar h2 {
+      text-align: center;
+      margin-bottom: 5px;
+      font-size: 20px;
+      color: #1abc9c;
+    }
+    .sidebar p {
+      text-align: center;
+      font-size: 12px;
+      margin-bottom: 15px;
+    }
+    .sidebar button {
+      margin: 8px 0;
+      padding: 8px;
+      width: 100%;
+      background-color: #1abc9c;
+      color: white;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      font-size: 14px;
+      transition: background 0.3s ease;
+    }
+    .sidebar button:hover {
+      background-color: #16a085;
+    }
+    .content {
+      flex: 1;
+      padding: 15px;
+      overflow-y: auto;
+    }
+    .tab-content {
+      display: none;
+    }
+    .tab-content.active {
+      display: block;
+    }
+    .form-section {
+      margin: 10px 0;
+    }
+    .form-section label {
+      display: block;
+      margin-bottom: 6px;
+      font-weight: bold;
+      color: #2c3e50;
+      font-size: 14px;
+    }
+    .form-section input,
+    .form-section select,
+    .form-section textarea,
+    .form-section button {
+      padding: 5px 8px;
+      margin-bottom: 8px;
+      border: 1px solid #bdc3c7;
+      border-radius: 4px;
+      width: 90%;
+      font-size: 12px;
+    }
+    .form-section input[type="radio"],
+    .form-section input[type="checkbox"] {
+      width: 16px;
+      height: 16px;
+      margin-right: 5px;
+      margin-top: 3px;
+    }
+    .form-section button {
+      background-color: #1abc9c;
+      color: white;
+      border: none;
+      cursor: pointer;
+      padding: 5px 6px;
+    }
+    .form-section button:hover {
+      background-color: #16a085;
+    }
+    #result, #radio-result, #checkbox-result, #dropdown-result {
+      margin-top: 20px;
+      padding: 10px;
+      background-color: #ecf0f1;
+      border-radius: 4px;
+      display: none;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 15px 0;
+      background-color: #ecf0f1;
+    }
+    table th, table td {
+      border: 1px solid #bdc3c7;
+      padding: 6px;
+      text-align: center;
+      font-size: 13px;
+    }
+    table th {
+      background-color: #1abc9c;
+      color: white;
+    }
+    iframe {
+      width: 100%;
+      height: 350px;
+      border: 1px solid #bdc3c7;
+      margin-top: 15px;
+    }
+    #user-info {
+      margin-bottom: 20px;
+      background: #fdfdfd;
+      padding: 15px;
+      border-left: 5px solid #1abc9c;
+      border-radius: 6px;
+    }
+  </style>
+
+</head>
+<body>
+  <script>
+    if (!localStorage.getItem('loggedIn')) {
+      window.location.href = "login.html";
+    }
+  </script>
+
+  <div class="sidebar">
+    <h2>zSolution</h2>
+    <p id="username-display"></p>
+    <button onclick="showTab('text-box')">Text Box</button>
+    <button onclick="showTab('radio-button')">Radio Button</button>
+    <button onclick="showTab('checkbox')">Check Box</button>
+    <button onclick="showTab('dropdown')">Drop Down</button>
+    <button onclick="showTab('alerts-popups')">Alerts & Popups</button>
+    <button onclick="showTab('broken-links')">Broken Links</button>
+    <button onclick="showTab('iframe')">iFrame</button>
+    <button onclick="showTab('web-table')">Web Table</button>
+    <button onclick="logout()">Logout</button>
+  </div>
+
+  <div class="content">
+    <!-- User Info Box -->
+    <div id="user-info">
+      <h3>Welcome, <span id="display-username"></span>!</h3>
+      <p><strong>Email:</strong> <span id="display-useremail"></span></p>
+      <p><strong>Role:</strong> <span id="display-userrole"></span></p>
+    </div>
+
+    <!-- Tab Contents -->
+    <div id="text-box" class="tab-content">
+      <h3>Text Box</h3>
+      <div class="form-section">
+        <label>Name:</label>
+        <input type="text" id="name" />
+        <label>Email:</label>
+        <input type="email" id="email" />
+        <label>Address:</label>
+        <textarea id="address" rows="3"></textarea>
+        <button onclick="showResult()">Submit</button>
+      </div>
+      <div id="result">
+        <h4>Submitted Details:</h4>
+        <p><strong>Name:</strong> <span id="result-name"></span></p>
+        <p><strong>Email:</strong> <span id="result-email"></span></p>
+        <p><strong>Address:</strong> <span id="result-address"></span></p>
+      </div>
+    </div>
+<!-- Redio button -->
+    <div id="radio-button" class="tab-content">
+      <h3>Radio Button</h3>
+      <div class="form-section">
+        <label>Gender:</label>
+        <input type="radio" name="gender" value="Male"> Male
+        <input type="radio" name="gender" value="Female"> Female
+        <input type="radio" name="gender" value="Other"> Other
+        <label>Age Group:</label>
+        <input type="radio" name="age" value="18-25"> 18–25
+        <input type="radio" name="age" value="26-35"> 26–35
+        <input type="radio" name="age" value="36+"> 36+
+        <button onclick="submitRadio()">Submit</button>
+      </div>
+      <div id="radio-result">
+        <p><strong>Gender:</strong> <span id="selected-gender"></span></p>
+        <p><strong>Age Group:</strong> <span id="selected-age"></span></p>
+      </div>
+    </div>
+
+     <!-- CheckBox -->
+
+    <div id="checkbox" class="tab-content">
+      <h3>Check Box</h3>
+      <div class="form-section">
+        <label>Hobbies (choose 1):</label>
+        <input type="checkbox" name="hobby" value="Reading"> Reading
+        <input type="checkbox" name="hobby" value="Traveling"> Traveling
+        <input type="checkbox" name="hobby" value="Gaming"> Gaming
+        <input type="checkbox" name="hobby" value="Cooking"> Cooking
+        <label>Subscribe to (choose 1):</label>
+        <input type="checkbox" name="subscribe" value="Newsletter"> Newsletter
+        <input type="checkbox" name="subscribe" value="Promotions"> Promotions
+        <button onclick="submitCheckbox()">Submit</button>
+      </div>
+      <div id="checkbox-result">
+        <p><strong>Hobby:</strong> <span id="selected-hobby"></span></p>
+        <p><strong>Subscription:</strong> <span id="selected-subscribe"></span></p>
+      </div>
+    </div>
+
+     <!-- DropDown -->
+    <div id="dropdown" class="tab-content">
+      <h3>Drop Down</h3>
+      <div class="form-section">
+        <label>Country:</label>
+        <select id="country">
+          <option value="">--Choose--</option>
+          <option>USA</option>
+          <option>India</option>
+          <option>UK</option>
+          <option>Canada</option>
+          <option>Germany</option>
+        </select>
+        <label>City:</label>
+        <select id="city">
+          <option value="">--Choose--</option>
+          <option>New York</option>
+          <option>London</option>
+          <option>Mumbai</option>
+          <option>Toronto</option>
+          <option>Berlin</option>
+        </select>
+        <button onclick="submitDropdown()">Submit</button>
+      </div>
+      <div id="dropdown-result"> 
+        <p><strong>Country:</strong> <span id="selected-country"></span></p>
+        <p><strong>City:</strong> <span id="selected-city"></span></p>
+      </div>
+    </div>
+
+    <div id="alerts-popups" class="tab-content">
+      <h3>Alerts & Popups</h3>
+      <button onclick="alert('This is a simple alert!')">Show Alert</button>
+      <button onclick="confirm('Are you sure you want to proceed?')">Show Confirmation</button>
+      <button onclick="let name = prompt('Enter your name:'); alert('Hello, ' + name)">Prompt</button>
+    </div>
+
+    <div id="broken-links" class="tab-content">
+      <h3>Broken Links</h3>
+      <div class="form-section">
+        <button onclick="checkBrokenLink('/page-not-exist-404.html')">Test Broken Link (404)</button><br><br>
+        <button onclick="checkBrokenLink('/bad-request-400')">Test Broken Link (400)</button>
+      </div>
+      <div id="broken-link-result" style="margin-top: 20px; display: none; background-color: #fdecea; padding: 10px; border-left: 5px solid red; border-radius: 5px;"></div>
+    </div>
+
+ 
+         <!-- IFrame -->
+    <div id="iframe" class="tab-content">
+      <h3>iFrame</h3>
+      <p>This section demonstrates multiple iFrames for testing automation interactions.</p>
+    
+      <iframe id="frame1" srcdoc="
+        <h2 style='color:#1abc9c;'>Frame 1: Welcome to zSolution</h2>
+        <p>This is the first embedded frame for automation testing.</p>
+      "></iframe>
+    
+      <iframe id="frame2" srcdoc="
+        <h2 style='color:#2c3e50;'>Frame 2: Nested Frame</h2>
+        <p>This frame can be used to test switching between iFrames.</p>
+      "></iframe>
+    </div>
+
+
+    
+ <!-- WebTable -->
+    <div id="web-table" class="tab-content">
+      <h3>Web Table</h3>
+      <style>
+        /* Form card */
+        .form-card {
+          background: #ffffff;
+          padding: 15px;
+          border-radius: 8px;
+          box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+          margin-bottom: 20px;
+        }
+        .form-card h4 {
+          margin: 0 0 10px 0;
+          color: #2c3e50;
+        }
+        .form-card p {
+          margin: 0 0 10px 0;
+          font-size: 13px;
+          color: #555;
+        }
+        .form-row {
+          display: flex;
+          flex-wrap: wrap;
+          gap: 10px;
+          align-items: center;
+        }
+        .form-row input {
+          flex: 1 1 150px;
+          padding: 6px 10px;
+          font-size: 13px;
+          border: 1px solid #bdc3c7;
+          border-radius: 5px;
+        }
+        .form-row button {
+          background-color: #1abc9c;
+          color: white;
+          border: none;
+          padding: 7px 15px;
+          border-radius: 5px;
+          cursor: pointer;
+          font-size: 13px;
+          transition: background 0.3s ease;
+        }
+        .form-row button:hover {
+          background-color: #16a085;
+        }
+    
+        /* Table styling */
+        #employeeTable {
+          width: 100%;
+          border-collapse: collapse;
+          border-radius: 8px;
+          overflow: hidden;
+          box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+        }
+        #employeeTable th, #employeeTable td {
+          padding: 10px;
+          font-size: 13px;
+          text-align: center;
+          border-bottom: 1px solid #e1e4e8;
+        }
+        #employeeTable th {
+          background-color: #1abc9c;
+          color: white;
+        }
+        #employeeTable tbody tr:nth-child(even) {
+          background-color: #f8f9fa;
+        }
+        #employeeTable tbody tr:hover {
+          background-color: #d1f0ea;
+        }
+        #employeeTable button {
+          padding: 4px 8px;
+          font-size: 12px;
+          border-radius: 5px;
+          border: none;
+          background-color: #e74c3c;
+          color: white;
+          cursor: pointer;
+          transition: background 0.3s ease;
+        }
+        #employeeTable button:hover {
+          background-color: #c0392b;
+        }
+      </style>
+      <!-- Add Record Form -->
+      <div class="form-section form-card">
+        <h4>Add New Record</h4>
+        <p>Fill in the details below and click "Add Record". You can delete any record anytime.</p>
+        <div class="form-row">
+          <input type="text" id="newName" placeholder="Name" />
+          <input type="text" id="newRole" placeholder="Role" />
+          <input type="text" id="newLocation" placeholder="Location" />
+          <button onclick="addNewRecord()">Add Record</button>
+        </div>
+      </div>
+    
+      <table id="employeeTable">
+        <thead>
+          <tr>
+            <th>#</th>
+            <th>Name</th>
+            <th>Role</th>
+            <th>Location</th>
+            <th>Action</th>
+          </tr>
+        </thead>
+        <tbody id="tableBody"></tbody>
+      </table>
+    
+      <!-- Message Box -->
+      <div id="table-message" style="margin-top:10px;padding:8px;border-radius:4px;font-size:13px;display:none;"></div>
+    
+      <script>
+        const tableBody = document.getElementById('tableBody');
+        const msgBox = document.getElementById('table-message');
+    
+        const roles = ["Developer", "Designer", "Manager", "QA", "Lead", "Analyst", "Support", "Architect"];
+        const locations = ["USA", "India", "UK", "Canada", "Germany", "Japan", "Australia", "UAE"];
+        const STORAGE_KEY = 'zsolutionRecords';
+    
+        // Load existing records or empty array
+        let records = JSON.parse(localStorage.getItem(STORAGE_KEY)) || [];
+    
+        // Save to localStorage
+        function saveRecords() {
+          localStorage.setItem(STORAGE_KEY, JSON.stringify(records));
+        }
+    
+        // Show message inline
+        function showMessage(msg, type = 'success') {
+          msgBox.innerText = msg;
+          msgBox.style.display = 'block';
+          msgBox.style.backgroundColor = type === 'success' ? '#d1f0ea' : '#f8d7da';
+          msgBox.style.color = type === 'success' ? '#155724' : '#721c24';
+          setTimeout(() => { msgBox.style.display = 'none'; }, 3000);
+        }
+    
+        // Generate 10 records if empty
+        function generateInitialRecords() {
+  if (records.length === 0) {
+    const initialData = [
+      { name: "John Doe", role: "Developer", location: "USA" },
+      { name: "Jane Smith", role: "Designer", location: "UK" },
+      { name: "Mike Johnson", role: "Manager", location: "Canada" },
+      { name: "Emily Davis", role: "QA", location: "India" },
+      { name: "Robert Brown", role: "Lead", location: "Germany" },
+      { name: "Linda Wilson", role: "Analyst", location: "Japan" },
+      { name: "James Taylor", role: "Support", location: "Australia" },
+      { name: "Patricia Miller", role: "Architect", location: "UAE" },
+      { name: "Michael Anderson", role: "Developer", location: "USA" },
+      { name: "Delbert Sanford", role: "Designer", location: "UAE" }
+    ];
+
+    initialData.forEach(item => {
+      records.push({
+        id: Date.now() + Math.random(),
+        name: item.name,
+        role: item.role,
+        location: item.location
+      });
+    });
+    saveRecords();
+  }
+  renderTable();
+}
+    
+        // Render table
+        function renderTable() {
+          tableBody.innerHTML = '';
+          records.forEach((rec, index) => {
+            const row = document.createElement('tr');
+            row.innerHTML = `
+              <td>${index + 1}</td>
+              <td>${rec.name}</td>
+              <td>${rec.role}</td>
+              <td>${rec.location}</td>
+              <td><button onclick="deleteRecord(${rec.id})">Delete</button></td>
+            `;
+            tableBody.appendChild(row);
+          });
+        }
+    
+        // Add new record
+        function addNewRecord() {
+          const name = document.getElementById('newName').value.trim();
+          const role = document.getElementById('newRole').value.trim();
+          const location = document.getElementById('newLocation').value.trim();
+    
+          if (!name || !role || !location) {
+            showMessage('Please fill out all fields.', 'error');
+            return;
+          }
+    
+          records.push({ id: Date.now() + Math.random(), name, role, location });
+          saveRecords();
+          renderTable();
+          showMessage('New record added successfully!');
+    
+          document.getElementById('newName').value = '';
+          document.getElementById('newRole').value = '';
+          document.getElementById('newLocation').value = '';
+        }
+    
+        // Delete record
+        function deleteRecord(id) {
+          records = records.filter(rec => rec.id !== id);
+          saveRecords();
+          renderTable();
+          showMessage('Record deleted successfully!');
+        }
+    
+        // Initialize table
+        generateInitialRecords();
+      </script>
+    </div>
+<!-- #region -->
+<!-- #region -->
+  <script>
+   window.onload = function () {
+      const storedUser = localStorage.getItem("user");
+      const loginTime = localStorage.getItem("loginTime");
+
+      if (storedUser) {
+        const user = JSON.parse(storedUser);
+        document.getElementById("username-display").textContent = `Welcome, ${user.fullName}`;
+        document.getElementById("display-username").textContent = user.fullName;
+        document.getElementById("display-useremail").textContent = user.email || "Not available";
+        document.getElementById("display-userrole").textContent = user.role || "User";
+      } else {
+        window.location.href = "login.html";
+      }
+    };
+
+    function logout() {
+      localStorage.clear();
+      window.location.href = "login.html";
+    }
+
+    function showTab(tabId) {
+      document.querySelectorAll('.tab-content').forEach(tab => tab.classList.remove('active'));
+      document.getElementById(tabId).classList.add('active');
+    }
+
+    function showResult() {
+      document.getElementById('result-name').textContent = document.getElementById('name').value;
+      document.getElementById('result-email').textContent = document.getElementById('email').value;
+      document.getElementById('result-address').textContent = document.getElementById('address').value;
+      document.getElementById('result').style.display = 'block';
+    }
+
+    function submitRadio() {
+      const gender = document.querySelector('input[name="gender"]:checked');
+      const age = document.querySelector('input[name="age"]:checked');
+      if (gender && age) {
+        document.getElementById('selected-gender').textContent = gender.value;
+        document.getElementById('selected-age').textContent = age.value;
+        document.getElementById('radio-result').style.display = 'block';
+      } else {
+        alert("Please select both gender and age group.");
+      }
+    }
+
+    document.querySelectorAll('input[name="hobby"]').forEach(cb => {
+      cb.addEventListener('change', () => {
+        document.querySelectorAll('input[name="hobby"]').forEach(el => { if (el !== cb) el.checked = false; });
+      });
+    });
+    document.querySelectorAll('input[name="subscribe"]').forEach(cb => {
+      cb.addEventListener('change', () => {
+        document.querySelectorAll('input[name="subscribe"]').forEach(el => { if (el !== cb) el.checked = false; });
+      });
+    });
+
+    function submitCheckbox() {
+      const hobby = document.querySelector('input[name="hobby"]:checked');
+      const subscribe = document.querySelector('input[name="subscribe"]:checked');
+      document.getElementById('selected-hobby').textContent = hobby ? hobby.value : 'None';
+      document.getElementById('selected-subscribe').textContent = subscribe ? subscribe.value : 'None';
+      document.getElementById('checkbox-result').style.display = 'block';
+    }
+
+    function submitDropdown() {
+      const country = document.getElementById('country').value;
+      const city = document.getElementById('city').value;
+      if (country && city) {
+        document.getElementById('selected-country').textContent = country;
+        document.getElementById('selected-city').textContent = city;
+        document.getElementById('dropdown-result').style.display = 'block';
+      } else {
+        alert("Please select both country and city.");
+      }
+    }
+    function checkBrokenLink(url) {
+  fetch(url)
+    .then(response => {
+      const resultDiv = document.getElementById("broken-link-result");
+      resultDiv.style.display = "block";
+      if (response.status >= 400 && response.status < 500) {
+        resultDiv.innerHTML = `🔴 <strong>Client Error:</strong> ${url} returned status code <strong>${response.status}</strong>.`;
+      } else if (response.status >= 500) {
+        resultDiv.innerHTML = `🔴 <strong>Server Error:</strong> ${url} returned status code <strong>${response.status}</strong>.`;
+      } else {
+        resultDiv.innerHTML = `✅ <strong>Success:</strong> ${url} returned status code <strong>${response.status}</strong>.`;
+      }
+    })
+    .catch(error => {
+      const resultDiv = document.getElementById("broken-link-result");
+      resultDiv.style.display = "block";
+      resultDiv.innerHTML = `❌ <strong>Fetch Failed:</strong> Could not reach ${url}. <br><small>${error.message}</small>`;
+    });
+}
+  </script>
+</body>
+</html>
+<!-- comment -->

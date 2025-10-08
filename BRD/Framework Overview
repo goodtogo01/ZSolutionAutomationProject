@@ -1,0 +1,9 @@
+. Framework Design Overview
+
+Key Features
+	1.	Java OOPS Principles for maintainability.
+	2.	Reusable Methods for Selenium interactions (e.g., dropdowns, text box, iframe handling, tables).
+	3.	TestNG for organizing and executing test cases.
+	4.	Maven for dependency management.
+	5.	Extent Reports for test reporting.
+	6.	Page Object Model (POM) for encapsulating page-level interactions.

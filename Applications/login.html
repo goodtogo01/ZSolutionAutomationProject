@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Login - zSolution</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: linear-gradient(to bottom, #e6f7ff, #ffffff);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+    }
+    .login-container {
+      background: white;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+      text-align: center;
+      width: 300px;
+    }
+    h2 {
+      color: #34495e;
+    }
+    input {
+      width: 90%;
+      padding: 8px;
+      margin: 10px 0;
+      border: 1px solid #bdc3c7;
+      border-radius: 4px;
+    }
+    button {
+      width: 100%;
+      padding: 10px;
+      background-color: #1abc9c;
+      color: white;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+    button:hover {
+      background-color: #16a085;
+    }
+    .error {
+      color: red;
+      font-size: 14px;
+    }
+    .credentials {
+      margin-top: 15px;
+      font-size: 14px;
+      color: #333;
+      text-align: left;
+      padding: 10px;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+      background: #f9f9f9;
+    }
+    .credentials strong {
+      display: block;
+      margin-bottom: 5px;
+      color: #1abc9c;
+    }
+  </style>
+</head>
+<body>
+  <div class="login-container">
+    <h2>Login to zSolution</h2>
+    <input type="text" id="username" placeholder="Username" />
+    <input type="password" id="password" placeholder="Password" />
+    <p id="error-message" class="error"></p>
+    <button onclick="validateLogin()">Login</button>
+
+    <div class="credentials">
+      <strong>Test Login Credentials:</strong>
+      <ul style="padding-left: 15px;">
+        <li><b>admin</b> / test123</li>
+        <li><b>shuhan</b> / pass123</li>
+        <li><b>miraj</b> / hello123</li>
+        <li><b>rayhan</b> / ray456</li>
+        <li><b>raja</b> / king789</li>
+      </ul>
+    </div>
+  </div>
+
+  <script>
+    const users = [
+      {
+        username: "admin",
+        password: "test123",
+        fullName: "Admin User",
+        email: "admin@zsolution.com",
+        role: "Administrator"
+      },
+      {
+        username: "shuhan",
+        password: "pass123",
+        fullName: "Shuhan Shahadat",
+        email: "shuhan@zsolution.com",
+        role: "Developer"
+      },
+      {
+        username: "miraj",
+        password: "hello123",
+        fullName: "Shahadat Miraj",
+        email: "miraj@zsolution.com",
+        role: "Analyst"
+      },
+      {
+        username: "rayhan",
+        password: "ray456",
+        fullName: "Rayhan Siddiqui",
+        email: "rayhan@zsolution.com",
+        role: "Tester"
+      },
+      {
+        username: "raja",
+        password: "king789",
+        fullName: "Saidur Raja",
+        email: "raja@zsolution.com",
+        role: "Manager"
+      },
+      {
+        username: "",
+        password: "king789",
+        fullName: "Saidur Raja",
+        email: "raja@zsolution.com",
+        role: "Manager"
+      }
+    ];
+
+    function validateLogin() {
+      const enteredUsername = document.getElementById("username").value.trim();
+      const enteredPassword = document.getElementById("password").value.trim();
+      const errorMessage = document.getElementById("error-message");
+
+      const matchedUser = users.find(
+        user => user.username === enteredUsername && user.password === enteredPassword
+      );
+
+      if (matchedUser) {
+        localStorage.setItem("loggedIn", true);
+        localStorage.setItem("user", JSON.stringify(matchedUser));
+        window.location.href = "zsolution.html";
+      } else {
+        errorMessage.textContent = "Invalid username or password!";
+      }
+    }
+  </script>
+</body>
+</html>
