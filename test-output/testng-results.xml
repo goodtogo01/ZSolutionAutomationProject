@@ -1,48 +1,722 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="6" total="7" passed="1" failed="0" skipped="0">
+<testng-results ignored="7" total="37" passed="30" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2025-10-07T23:50:10 EDT" name="Default suite" finished-at="2025-10-07T23:50:12 EDT" duration-ms="2486">
+  <suite started-at="2025-10-08T00:46:27 EDT" name="ZSolution Automation Regression Suite" finished-at="2025-10-08T00:46:54 EDT" duration-ms="27488">
     <groups>
     </groups>
-    <test started-at="2025-10-07T23:50:10 EDT" name="Default test" finished-at="2025-10-07T23:50:12 EDT" duration-ms="2486">
-      <class name="tests.WebTableTest">
-        <test-method is-config="true" signature="setupExtentReport()[pri:0, instance:tests.WebTableTest@273444fe]" started-at="2025-10-07T23:50:10 EDT" name="setupExtentReport" finished-at="2025-10-07T23:50:10 EDT" duration-ms="97" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- setupExtentReport -->
-        <test-method is-config="true" signature="setUpClass()[pri:0, instance:tests.WebTableTest@273444fe]" started-at="2025-10-07T23:50:10 EDT" name="setUpClass" finished-at="2025-10-07T23:50:12 EDT" duration-ms="2247" status="PASS">
+    <test started-at="2025-10-08T00:46:27 EDT" name="Regression Test Suite" finished-at="2025-10-08T00:46:54 EDT" duration-ms="27488">
+      <class name="tests.IFrameTest">
+        <test-method is-config="true" signature="setUpClass()[pri:0, instance:tests.IFrameTest@2dc995f4]" started-at="2025-10-08T00:46:51 EDT" name="setUpClass" finished-at="2025-10-08T00:46:52 EDT" duration-ms="744" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUpClass -->
-        <test-method is-config="true" signature="initExtentForClass()[pri:0, instance:tests.WebTableTest@273444fe]" started-at="2025-10-07T23:50:10 EDT" name="initExtentForClass" finished-at="2025-10-07T23:50:10 EDT" duration-ms="0" status="PASS">
+        <test-method is-config="true" signature="initExtentForClass()[pri:0, instance:tests.IFrameTest@2dc995f4]" started-at="2025-10-08T00:46:51 EDT" name="initExtentForClass" finished-at="2025-10-08T00:46:51 EDT" duration-ms="0" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- initExtentForClass -->
-        <test-method signature="testFilterByLocation()[pri:6, instance:tests.WebTableTest@273444fe]" started-at="2025-10-07T23:50:12 EDT" name="testFilterByLocation" finished-at="2025-10-07T23:50:12 EDT" duration-ms="115" status="PASS">
+        <test-method is-config="true" signature="navigateToIFrameMenu()[pri:0, instance:tests.IFrameTest@2dc995f4]" started-at="2025-10-08T00:46:52 EDT" name="navigateToIFrameMenu" finished-at="2025-10-08T00:46:52 EDT" duration-ms="36" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- testFilterByLocation -->
-        <test-method is-config="true" signature="handleTestResult(org.testng.ITestResult)[pri:0, instance:tests.WebTableTest@273444fe]" started-at="2025-10-07T23:50:12 EDT" name="handleTestResult" finished-at="2025-10-07T23:50:12 EDT" duration-ms="1" status="PASS">
+        </test-method> <!-- navigateToIFrameMenu -->
+        <test-method signature="testIFrame1Content()[pri:1, instance:tests.IFrameTest@2dc995f4]" started-at="2025-10-08T00:46:52 EDT" name="testIFrame1Content" finished-at="2025-10-08T00:46:52 EDT" duration-ms="44" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testIFrame1Content -->
+        <test-method is-config="true" signature="handleTestResult(org.testng.ITestResult)[pri:0, instance:tests.IFrameTest@2dc995f4]" started-at="2025-10-08T00:46:52 EDT" name="handleTestResult" finished-at="2025-10-08T00:46:52 EDT" duration-ms="0" status="PASS">
           <params>
             <param index="0">
               <value>
-                <![CDATA[[TestResult name=testFilterByLocation status=SUCCESS method=WebTableTest.testFilterByLocation()[pri:6, instance:tests.WebTableTest@273444fe] output={null}]]]>
+                <![CDATA[[TestResult name=testIFrame1Content status=SUCCESS method=IFrameTest.testIFrame1Content()[pri:1, instance:tests.IFrameTest@2dc995f4] output={null}]]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- handleTestResult -->
-        <test-method is-config="true" signature="tearDownClass()[pri:0, instance:tests.WebTableTest@273444fe]" started-at="2025-10-07T23:50:12 EDT" name="tearDownClass" finished-at="2025-10-07T23:50:12 EDT" duration-ms="110" status="PASS">
+        <test-method is-config="true" signature="navigateToIFrameMenu()[pri:0, instance:tests.IFrameTest@2dc995f4]" started-at="2025-10-08T00:46:52 EDT" name="navigateToIFrameMenu" finished-at="2025-10-08T00:46:52 EDT" duration-ms="23" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- navigateToIFrameMenu -->
+        <test-method signature="testIFrame2Content()[pri:2, instance:tests.IFrameTest@2dc995f4]" started-at="2025-10-08T00:46:52 EDT" name="testIFrame2Content" finished-at="2025-10-08T00:46:52 EDT" duration-ms="32" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testIFrame2Content -->
+        <test-method is-config="true" signature="handleTestResult(org.testng.ITestResult)[pri:0, instance:tests.IFrameTest@2dc995f4]" started-at="2025-10-08T00:46:52 EDT" name="handleTestResult" finished-at="2025-10-08T00:46:52 EDT" duration-ms="0" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=testIFrame2Content status=SUCCESS method=IFrameTest.testIFrame2Content()[pri:2, instance:tests.IFrameTest@2dc995f4] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- handleTestResult -->
+        <test-method is-config="true" signature="navigateToIFrameMenu()[pri:0, instance:tests.IFrameTest@2dc995f4]" started-at="2025-10-08T00:46:52 EDT" name="navigateToIFrameMenu" finished-at="2025-10-08T00:46:52 EDT" duration-ms="22" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- navigateToIFrameMenu -->
+        <test-method signature="testSwitchBetweenIFrames()[pri:3, instance:tests.IFrameTest@2dc995f4]" started-at="2025-10-08T00:46:52 EDT" name="testSwitchBetweenIFrames" finished-at="2025-10-08T00:46:54 EDT" duration-ms="2073" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testSwitchBetweenIFrames -->
+        <test-method is-config="true" signature="handleTestResult(org.testng.ITestResult)[pri:0, instance:tests.IFrameTest@2dc995f4]" started-at="2025-10-08T00:46:54 EDT" name="handleTestResult" finished-at="2025-10-08T00:46:54 EDT" duration-ms="1" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=testSwitchBetweenIFrames status=SUCCESS method=IFrameTest.testSwitchBetweenIFrames()[pri:3, instance:tests.IFrameTest@2dc995f4] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- handleTestResult -->
+        <test-method is-config="true" signature="navigateToIFrameMenu()[pri:0, instance:tests.IFrameTest@2dc995f4]" started-at="2025-10-08T00:46:54 EDT" name="navigateToIFrameMenu" finished-at="2025-10-08T00:46:54 EDT" duration-ms="47" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- navigateToIFrameMenu -->
+        <test-method signature="testVerifyIFrameContentPresence()[pri:4, instance:tests.IFrameTest@2dc995f4]" started-at="2025-10-08T00:46:54 EDT" name="testVerifyIFrameContentPresence" finished-at="2025-10-08T00:46:54 EDT" duration-ms="53" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testVerifyIFrameContentPresence -->
+        <test-method is-config="true" signature="handleTestResult(org.testng.ITestResult)[pri:0, instance:tests.IFrameTest@2dc995f4]" started-at="2025-10-08T00:46:54 EDT" name="handleTestResult" finished-at="2025-10-08T00:46:54 EDT" duration-ms="0" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=testVerifyIFrameContentPresence status=SUCCESS method=IFrameTest.testVerifyIFrameContentPresence()[pri:4, instance:tests.IFrameTest@2dc995f4] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- handleTestResult -->
+        <test-method is-config="true" signature="tearDownClass()[pri:0, instance:tests.IFrameTest@2dc995f4]" started-at="2025-10-08T00:46:54 EDT" name="tearDownClass" finished-at="2025-10-08T00:46:54 EDT" duration-ms="110" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDownClass -->
-        <test-method is-config="true" signature="tearDownAllDrivers()[pri:0, instance:tests.WebTableTest@273444fe]" started-at="2025-10-07T23:50:12 EDT" name="tearDownAllDrivers" finished-at="2025-10-07T23:50:12 EDT" duration-ms="1" status="PASS">
+        <test-method is-config="true" signature="tearDownAllDrivers()[pri:0, instance:tests.IFrameTest@2dc995f4]" started-at="2025-10-08T00:46:54 EDT" name="tearDownAllDrivers" finished-at="2025-10-08T00:46:54 EDT" duration-ms="0" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDownAllDrivers -->
+      </class> <!-- tests.IFrameTest -->
+      <class name="tests.TextBoxTest">
+        <test-method is-config="true" signature="initExtentForClass()[pri:0, instance:tests.TextBoxTest@22d7b4f8]" started-at="2025-10-08T00:46:32 EDT" name="initExtentForClass" finished-at="2025-10-08T00:46:32 EDT" duration-ms="0" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- initExtentForClass -->
+        <test-method is-config="true" signature="setUpClass()[pri:0, instance:tests.TextBoxTest@22d7b4f8]" started-at="2025-10-08T00:46:32 EDT" name="setUpClass" finished-at="2025-10-08T00:46:33 EDT" duration-ms="800" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUpClass -->
+        <test-method is-config="true" signature="navigateToTextBoxPage()[pri:0, instance:tests.TextBoxTest@22d7b4f8]" started-at="2025-10-08T00:46:33 EDT" name="navigateToTextBoxPage" finished-at="2025-10-08T00:46:33 EDT" duration-ms="34" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- navigateToTextBoxPage -->
+        <test-method signature="testTextBox(java.lang.String,java.lang.String,java.lang.String)[pri:1, instance:tests.TextBoxTest@22d7b4f8]" started-at="2025-10-08T00:46:33 EDT" name="testTextBox" data-provider="excelData" finished-at="2025-10-08T00:46:33 EDT" duration-ms="264" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[Jone Doe]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[jdoe@zsolution.com]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[4012, 12Street, LIC, NY, 11101]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testTextBox -->
+        <test-method is-config="true" signature="handleTestResult(org.testng.ITestResult)[pri:0, instance:tests.TextBoxTest@22d7b4f8]" started-at="2025-10-08T00:46:33 EDT" name="handleTestResult" finished-at="2025-10-08T00:46:33 EDT" duration-ms="1" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=testTextBox status=SUCCESS method=TextBoxTest.testTextBox(java.lang.String,java.lang.String,java.lang.String)[pri:1, instance:tests.TextBoxTest@22d7b4f8] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- handleTestResult -->
+        <test-method is-config="true" signature="tearDownClass()[pri:0, instance:tests.TextBoxTest@22d7b4f8]" started-at="2025-10-08T00:46:33 EDT" name="tearDownClass" finished-at="2025-10-08T00:46:33 EDT" duration-ms="110" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDownClass -->
+        <test-method is-config="true" signature="tearDownAllDrivers()[pri:0, instance:tests.TextBoxTest@22d7b4f8]" started-at="2025-10-08T00:46:33 EDT" name="tearDownAllDrivers" finished-at="2025-10-08T00:46:33 EDT" duration-ms="1" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDownAllDrivers -->
+      </class> <!-- tests.TextBoxTest -->
+      <class name="tests.WebTableTest">
+        <test-method is-config="true" signature="setUpClass()[pri:0, instance:tests.WebTableTest@e8df99a]" started-at="2025-10-08T00:46:49 EDT" name="setUpClass" finished-at="2025-10-08T00:46:50 EDT" duration-ms="739" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUpClass -->
+        <test-method is-config="true" signature="initExtentForClass()[pri:0, instance:tests.WebTableTest@e8df99a]" started-at="2025-10-08T00:46:49 EDT" name="initExtentForClass" finished-at="2025-10-08T00:46:49 EDT" duration-ms="0" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- initExtentForClass -->
+        <test-method signature="testRowCount()[pri:1, instance:tests.WebTableTest@e8df99a]" started-at="2025-10-08T00:46:50 EDT" name="testRowCount" finished-at="2025-10-08T00:46:50 EDT" duration-ms="6" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testRowCount -->
+        <test-method signature="testFetchAndPrintData()[pri:2, instance:tests.WebTableTest@e8df99a]" started-at="2025-10-08T00:46:50 EDT" name="testFetchAndPrintData" finished-at="2025-10-08T00:46:50 EDT" duration-ms="238" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testFetchAndPrintData -->
+        <test-method is-config="true" signature="handleTestResult(org.testng.ITestResult)[pri:0, instance:tests.WebTableTest@e8df99a]" started-at="2025-10-08T00:46:50 EDT" name="handleTestResult" finished-at="2025-10-08T00:46:50 EDT" duration-ms="0" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=testRowCount status=SUCCESS method=WebTableTest.testRowCount()[pri:1, instance:tests.WebTableTest@e8df99a] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- handleTestResult -->
+        <test-method signature="testSearchSpecificRecord()[pri:3, instance:tests.WebTableTest@e8df99a]" started-at="2025-10-08T00:46:50 EDT" name="testSearchSpecificRecord" finished-at="2025-10-08T00:46:50 EDT" duration-ms="188" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testSearchSpecificRecord -->
+        <test-method is-config="true" signature="handleTestResult(org.testng.ITestResult)[pri:0, instance:tests.WebTableTest@e8df99a]" started-at="2025-10-08T00:46:50 EDT" name="handleTestResult" finished-at="2025-10-08T00:46:50 EDT" duration-ms="0" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=testFetchAndPrintData status=SUCCESS method=WebTableTest.testFetchAndPrintData()[pri:2, instance:tests.WebTableTest@e8df99a] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- handleTestResult -->
+        <test-method is-config="true" signature="handleTestResult(org.testng.ITestResult)[pri:0, instance:tests.WebTableTest@e8df99a]" started-at="2025-10-08T00:46:50 EDT" name="handleTestResult" finished-at="2025-10-08T00:46:50 EDT" duration-ms="0" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=testSearchSpecificRecord status=SUCCESS method=WebTableTest.testSearchSpecificRecord()[pri:3, instance:tests.WebTableTest@e8df99a] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- handleTestResult -->
+        <test-method signature="testAddNewRecordAndSearch()[pri:4, instance:tests.WebTableTest@e8df99a]" started-at="2025-10-08T00:46:50 EDT" name="testAddNewRecordAndSearch" finished-at="2025-10-08T00:46:51 EDT" duration-ms="261" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testAddNewRecordAndSearch -->
+        <test-method signature="testDeleteRecord()[pri:5, instance:tests.WebTableTest@e8df99a]" started-at="2025-10-08T00:46:51 EDT" name="testDeleteRecord" finished-at="2025-10-08T00:46:51 EDT" duration-ms="317" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testDeleteRecord -->
+        <test-method is-config="true" signature="handleTestResult(org.testng.ITestResult)[pri:0, instance:tests.WebTableTest@e8df99a]" started-at="2025-10-08T00:46:51 EDT" name="handleTestResult" finished-at="2025-10-08T00:46:51 EDT" duration-ms="0" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=testAddNewRecordAndSearch status=SUCCESS method=WebTableTest.testAddNewRecordAndSearch()[pri:4, instance:tests.WebTableTest@e8df99a] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- handleTestResult -->
+        <test-method signature="testFilterByLocation()[pri:6, instance:tests.WebTableTest@e8df99a]" started-at="2025-10-08T00:46:51 EDT" name="testFilterByLocation" finished-at="2025-10-08T00:46:51 EDT" duration-ms="88" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testFilterByLocation -->
+        <test-method is-config="true" signature="handleTestResult(org.testng.ITestResult)[pri:0, instance:tests.WebTableTest@e8df99a]" started-at="2025-10-08T00:46:51 EDT" name="handleTestResult" finished-at="2025-10-08T00:46:51 EDT" duration-ms="0" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=testDeleteRecord status=SUCCESS method=WebTableTest.testDeleteRecord()[pri:5, instance:tests.WebTableTest@e8df99a] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- handleTestResult -->
+        <test-method signature="testDynamicRoleValidation()[pri:7, instance:tests.WebTableTest@e8df99a]" started-at="2025-10-08T00:46:51 EDT" name="testDynamicRoleValidation" finished-at="2025-10-08T00:46:51 EDT" duration-ms="40" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testDynamicRoleValidation -->
+        <test-method is-config="true" signature="handleTestResult(org.testng.ITestResult)[pri:0, instance:tests.WebTableTest@e8df99a]" started-at="2025-10-08T00:46:51 EDT" name="handleTestResult" finished-at="2025-10-08T00:46:51 EDT" duration-ms="0" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=testFilterByLocation status=SUCCESS method=WebTableTest.testFilterByLocation()[pri:6, instance:tests.WebTableTest@e8df99a] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- handleTestResult -->
+        <test-method is-config="true" signature="handleTestResult(org.testng.ITestResult)[pri:0, instance:tests.WebTableTest@e8df99a]" started-at="2025-10-08T00:46:51 EDT" name="handleTestResult" finished-at="2025-10-08T00:46:51 EDT" duration-ms="1" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=testDynamicRoleValidation status=SUCCESS method=WebTableTest.testDynamicRoleValidation()[pri:7, instance:tests.WebTableTest@e8df99a] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- handleTestResult -->
+        <test-method is-config="true" signature="tearDownClass()[pri:0, instance:tests.WebTableTest@e8df99a]" started-at="2025-10-08T00:46:51 EDT" name="tearDownClass" finished-at="2025-10-08T00:46:51 EDT" duration-ms="109" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDownClass -->
+        <test-method is-config="true" signature="tearDownAllDrivers()[pri:0, instance:tests.WebTableTest@e8df99a]" started-at="2025-10-08T00:46:51 EDT" name="tearDownAllDrivers" finished-at="2025-10-08T00:46:51 EDT" duration-ms="1" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDownAllDrivers -->
       </class> <!-- tests.WebTableTest -->
-    </test> <!-- Default test -->
-  </suite> <!-- Default suite -->
+      <class name="tests.AlertsAndPopupTest">
+        <test-method is-config="true" signature="setUpClass()[pri:0, instance:tests.AlertsAndPopupTest@e54303]" started-at="2025-10-08T00:46:48 EDT" name="setUpClass" finished-at="2025-10-08T00:46:49 EDT" duration-ms="711" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUpClass -->
+        <test-method is-config="true" signature="initExtentForClass()[pri:0, instance:tests.AlertsAndPopupTest@e54303]" started-at="2025-10-08T00:46:48 EDT" name="initExtentForClass" finished-at="2025-10-08T00:46:48 EDT" duration-ms="0" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- initExtentForClass -->
+        <test-method is-config="true" signature="navigateToAlertMenu()[pri:0, instance:tests.AlertsAndPopupTest@e54303]" started-at="2025-10-08T00:46:49 EDT" name="navigateToAlertMenu" finished-at="2025-10-08T00:46:49 EDT" duration-ms="38" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- navigateToAlertMenu -->
+        <test-method signature="basicAlertHandling()[pri:1, instance:tests.AlertsAndPopupTest@e54303]" started-at="2025-10-08T00:46:49 EDT" name="basicAlertHandling" finished-at="2025-10-08T00:46:49 EDT" duration-ms="52" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- basicAlertHandling -->
+        <test-method is-config="true" signature="handleTestResult(org.testng.ITestResult)[pri:0, instance:tests.AlertsAndPopupTest@e54303]" started-at="2025-10-08T00:46:49 EDT" name="handleTestResult" finished-at="2025-10-08T00:46:49 EDT" duration-ms="0" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=basicAlertHandling status=SUCCESS method=AlertsAndPopupTest.basicAlertHandling()[pri:1, instance:tests.AlertsAndPopupTest@e54303] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- handleTestResult -->
+        <test-method is-config="true" signature="navigateToAlertMenu()[pri:0, instance:tests.AlertsAndPopupTest@e54303]" started-at="2025-10-08T00:46:49 EDT" name="navigateToAlertMenu" finished-at="2025-10-08T00:46:49 EDT" duration-ms="35" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- navigateToAlertMenu -->
+        <test-method signature="confirmationAlertHandling()[pri:2, instance:tests.AlertsAndPopupTest@e54303]" started-at="2025-10-08T00:46:49 EDT" name="confirmationAlertHandling" finished-at="2025-10-08T00:46:49 EDT" duration-ms="45" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- confirmationAlertHandling -->
+        <test-method is-config="true" signature="handleTestResult(org.testng.ITestResult)[pri:0, instance:tests.AlertsAndPopupTest@e54303]" started-at="2025-10-08T00:46:49 EDT" name="handleTestResult" finished-at="2025-10-08T00:46:49 EDT" duration-ms="0" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=confirmationAlertHandling status=SUCCESS method=AlertsAndPopupTest.confirmationAlertHandling()[pri:2, instance:tests.AlertsAndPopupTest@e54303] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- handleTestResult -->
+        <test-method is-config="true" signature="navigateToAlertMenu()[pri:0, instance:tests.AlertsAndPopupTest@e54303]" started-at="2025-10-08T00:46:49 EDT" name="navigateToAlertMenu" finished-at="2025-10-08T00:46:49 EDT" duration-ms="32" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- navigateToAlertMenu -->
+        <test-method signature="promptAlertHandling()[pri:3, instance:tests.AlertsAndPopupTest@e54303]" started-at="2025-10-08T00:46:49 EDT" name="promptAlertHandling" finished-at="2025-10-08T00:46:49 EDT" duration-ms="72" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- promptAlertHandling -->
+        <test-method is-config="true" signature="handleTestResult(org.testng.ITestResult)[pri:0, instance:tests.AlertsAndPopupTest@e54303]" started-at="2025-10-08T00:46:49 EDT" name="handleTestResult" finished-at="2025-10-08T00:46:49 EDT" duration-ms="1" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=promptAlertHandling status=SUCCESS method=AlertsAndPopupTest.promptAlertHandling()[pri:3, instance:tests.AlertsAndPopupTest@e54303] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- handleTestResult -->
+        <test-method is-config="true" signature="tearDownClass()[pri:0, instance:tests.AlertsAndPopupTest@e54303]" started-at="2025-10-08T00:46:49 EDT" name="tearDownClass" finished-at="2025-10-08T00:46:49 EDT" duration-ms="104" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDownClass -->
+        <test-method is-config="true" signature="tearDownAllDrivers()[pri:0, instance:tests.AlertsAndPopupTest@e54303]" started-at="2025-10-08T00:46:49 EDT" name="tearDownAllDrivers" finished-at="2025-10-08T00:46:49 EDT" duration-ms="0" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDownAllDrivers -->
+      </class> <!-- tests.AlertsAndPopupTest -->
+      <class name="tests.CheckBoxTest">
+        <test-method is-config="true" signature="initExtentForClass()[pri:0, instance:tests.CheckBoxTest@5674e1f2]" started-at="2025-10-08T00:46:33 EDT" name="initExtentForClass" finished-at="2025-10-08T00:46:33 EDT" duration-ms="0" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- initExtentForClass -->
+        <test-method is-config="true" signature="setUpClass()[pri:0, instance:tests.CheckBoxTest@5674e1f2]" started-at="2025-10-08T00:46:33 EDT" name="setUpClass" finished-at="2025-10-08T00:46:34 EDT" duration-ms="702" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUpClass -->
+        <test-method is-config="true" signature="navigateToCheckBoxSection()[pri:0, instance:tests.CheckBoxTest@5674e1f2]" started-at="2025-10-08T00:46:34 EDT" name="navigateToCheckBoxSection" finished-at="2025-10-08T00:46:34 EDT" duration-ms="44" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- navigateToCheckBoxSection -->
+        <test-method signature="validatePageTitle()[pri:0, instance:tests.CheckBoxTest@5674e1f2]" started-at="2025-10-08T00:46:34 EDT" name="validatePageTitle" finished-at="2025-10-08T00:46:34 EDT" duration-ms="3" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- validatePageTitle -->
+        <test-method is-config="true" signature="handleTestResult(org.testng.ITestResult)[pri:0, instance:tests.CheckBoxTest@5674e1f2]" started-at="2025-10-08T00:46:34 EDT" name="handleTestResult" finished-at="2025-10-08T00:46:34 EDT" duration-ms="0" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=validatePageTitle status=SUCCESS method=CheckBoxTest.validatePageTitle()[pri:0, instance:tests.CheckBoxTest@5674e1f2] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- handleTestResult -->
+        <test-method is-config="true" signature="navigateToCheckBoxSection()[pri:0, instance:tests.CheckBoxTest@5674e1f2]" started-at="2025-10-08T00:46:34 EDT" name="navigateToCheckBoxSection" finished-at="2025-10-08T00:46:34 EDT" duration-ms="36" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- navigateToCheckBoxSection -->
+        <test-method signature="testNavigateToCheckBoxMenu()[pri:1, instance:tests.CheckBoxTest@5674e1f2]" started-at="2025-10-08T00:46:34 EDT" name="testNavigateToCheckBoxMenu" finished-at="2025-10-08T00:46:34 EDT" duration-ms="11" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testNavigateToCheckBoxMenu -->
+        <test-method is-config="true" signature="navigateToCheckBoxSection()[pri:0, instance:tests.CheckBoxTest@5674e1f2]" started-at="2025-10-08T00:46:34 EDT" name="navigateToCheckBoxSection" finished-at="2025-10-08T00:46:34 EDT" duration-ms="32" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- navigateToCheckBoxSection -->
+        <test-method is-config="true" signature="handleTestResult(org.testng.ITestResult)[pri:0, instance:tests.CheckBoxTest@5674e1f2]" started-at="2025-10-08T00:46:34 EDT" name="handleTestResult" finished-at="2025-10-08T00:46:34 EDT" duration-ms="0" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=testNavigateToCheckBoxMenu status=SUCCESS method=CheckBoxTest.testNavigateToCheckBoxMenu()[pri:1, instance:tests.CheckBoxTest@5674e1f2] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- handleTestResult -->
+        <test-method signature="testSelectIndividualCheckBox()[pri:2, instance:tests.CheckBoxTest@5674e1f2]" started-at="2025-10-08T00:46:34 EDT" name="testSelectIndividualCheckBox" finished-at="2025-10-08T00:46:34 EDT" duration-ms="54" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testSelectIndividualCheckBox -->
+        <test-method is-config="true" signature="handleTestResult(org.testng.ITestResult)[pri:0, instance:tests.CheckBoxTest@5674e1f2]" started-at="2025-10-08T00:46:34 EDT" name="handleTestResult" finished-at="2025-10-08T00:46:34 EDT" duration-ms="0" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=testSelectIndividualCheckBox status=SUCCESS method=CheckBoxTest.testSelectIndividualCheckBox()[pri:2, instance:tests.CheckBoxTest@5674e1f2] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- handleTestResult -->
+        <test-method is-config="true" signature="navigateToCheckBoxSection()[pri:0, instance:tests.CheckBoxTest@5674e1f2]" started-at="2025-10-08T00:46:34 EDT" name="navigateToCheckBoxSection" finished-at="2025-10-08T00:46:34 EDT" duration-ms="32" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- navigateToCheckBoxSection -->
+        <test-method signature="testDeselectIndividualCheckBox()[pri:3, instance:tests.CheckBoxTest@5674e1f2]" started-at="2025-10-08T00:46:34 EDT" name="testDeselectIndividualCheckBox" finished-at="2025-10-08T00:46:34 EDT" duration-ms="65" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testDeselectIndividualCheckBox -->
+        <test-method is-config="true" signature="navigateToCheckBoxSection()[pri:0, instance:tests.CheckBoxTest@5674e1f2]" started-at="2025-10-08T00:46:34 EDT" name="navigateToCheckBoxSection" finished-at="2025-10-08T00:46:34 EDT" duration-ms="31" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- navigateToCheckBoxSection -->
+        <test-method is-config="true" signature="handleTestResult(org.testng.ITestResult)[pri:0, instance:tests.CheckBoxTest@5674e1f2]" started-at="2025-10-08T00:46:34 EDT" name="handleTestResult" finished-at="2025-10-08T00:46:34 EDT" duration-ms="0" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=testDeselectIndividualCheckBox status=SUCCESS method=CheckBoxTest.testDeselectIndividualCheckBox()[pri:3, instance:tests.CheckBoxTest@5674e1f2] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- handleTestResult -->
+        <test-method signature="testSelectEachCheckBoxes()[pri:4, instance:tests.CheckBoxTest@5674e1f2]" started-at="2025-10-08T00:46:34 EDT" name="testSelectEachCheckBoxes" finished-at="2025-10-08T00:46:47 EDT" duration-ms="12357" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testSelectEachCheckBoxes -->
+        <test-method is-config="true" signature="handleTestResult(org.testng.ITestResult)[pri:0, instance:tests.CheckBoxTest@5674e1f2]" started-at="2025-10-08T00:46:47 EDT" name="handleTestResult" finished-at="2025-10-08T00:46:47 EDT" duration-ms="0" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=testSelectEachCheckBoxes status=SUCCESS method=CheckBoxTest.testSelectEachCheckBoxes()[pri:4, instance:tests.CheckBoxTest@5674e1f2] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- handleTestResult -->
+        <test-method is-config="true" signature="navigateToCheckBoxSection()[pri:0, instance:tests.CheckBoxTest@5674e1f2]" started-at="2025-10-08T00:46:47 EDT" name="navigateToCheckBoxSection" finished-at="2025-10-08T00:46:47 EDT" duration-ms="46" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- navigateToCheckBoxSection -->
+        <test-method signature="testDeselectAllCheckBoxes()[pri:5, instance:tests.CheckBoxTest@5674e1f2]" started-at="2025-10-08T00:46:47 EDT" name="testDeselectAllCheckBoxes" finished-at="2025-10-08T00:46:47 EDT" duration-ms="104" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testDeselectAllCheckBoxes -->
+        <test-method is-config="true" signature="handleTestResult(org.testng.ITestResult)[pri:0, instance:tests.CheckBoxTest@5674e1f2]" started-at="2025-10-08T00:46:47 EDT" name="handleTestResult" finished-at="2025-10-08T00:46:47 EDT" duration-ms="0" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=testDeselectAllCheckBoxes status=SUCCESS method=CheckBoxTest.testDeselectAllCheckBoxes()[pri:5, instance:tests.CheckBoxTest@5674e1f2] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- handleTestResult -->
+        <test-method is-config="true" signature="tearDownClass()[pri:0, instance:tests.CheckBoxTest@5674e1f2]" started-at="2025-10-08T00:46:47 EDT" name="tearDownClass" finished-at="2025-10-08T00:46:47 EDT" duration-ms="107" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDownClass -->
+        <test-method is-config="true" signature="tearDownAllDrivers()[pri:0, instance:tests.CheckBoxTest@5674e1f2]" started-at="2025-10-08T00:46:47 EDT" name="tearDownAllDrivers" finished-at="2025-10-08T00:46:47 EDT" duration-ms="0" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDownAllDrivers -->
+      </class> <!-- tests.CheckBoxTest -->
+      <class name="tests.RadioButtonTest">
+        <test-method is-config="true" signature="initExtentForClass()[pri:0, instance:tests.RadioButtonTest@3a12c404]" started-at="2025-10-08T00:46:31 EDT" name="initExtentForClass" finished-at="2025-10-08T00:46:31 EDT" duration-ms="0" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- initExtentForClass -->
+        <test-method is-config="true" signature="setUpClass()[pri:0, instance:tests.RadioButtonTest@3a12c404]" started-at="2025-10-08T00:46:31 EDT" name="setUpClass" finished-at="2025-10-08T00:46:31 EDT" duration-ms="691" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUpClass -->
+        <test-method is-config="true" signature="navigateToRadioButtonMenu()[pri:0, instance:tests.RadioButtonTest@3a12c404]" started-at="2025-10-08T00:46:31 EDT" name="navigateToRadioButtonMenu" finished-at="2025-10-08T00:46:31 EDT" duration-ms="38" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- navigateToRadioButtonMenu -->
+        <test-method signature="selectMaleAge_18_25()[pri:1, instance:tests.RadioButtonTest@3a12c404]" started-at="2025-10-08T00:46:31 EDT" name="selectMaleAge_18_25" finished-at="2025-10-08T00:46:31 EDT" duration-ms="139" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- selectMaleAge_18_25 -->
+        <test-method is-config="true" signature="handleTestResult(org.testng.ITestResult)[pri:0, instance:tests.RadioButtonTest@3a12c404]" started-at="2025-10-08T00:46:31 EDT" name="handleTestResult" finished-at="2025-10-08T00:46:31 EDT" duration-ms="0" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=selectMaleAge_18_25 status=SUCCESS method=RadioButtonTest.selectMaleAge_18_25()[pri:1, instance:tests.RadioButtonTest@3a12c404] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- handleTestResult -->
+        <test-method is-config="true" signature="navigateToRadioButtonMenu()[pri:0, instance:tests.RadioButtonTest@3a12c404]" started-at="2025-10-08T00:46:31 EDT" name="navigateToRadioButtonMenu" finished-at="2025-10-08T00:46:32 EDT" duration-ms="24" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- navigateToRadioButtonMenu -->
+        <test-method signature="selectFemaleOption()[pri:2, instance:tests.RadioButtonTest@3a12c404]" started-at="2025-10-08T00:46:32 EDT" name="selectFemaleOption" finished-at="2025-10-08T00:46:32 EDT" duration-ms="138" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- selectFemaleOption -->
+        <test-method is-config="true" signature="handleTestResult(org.testng.ITestResult)[pri:0, instance:tests.RadioButtonTest@3a12c404]" started-at="2025-10-08T00:46:32 EDT" name="handleTestResult" finished-at="2025-10-08T00:46:32 EDT" duration-ms="0" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=selectFemaleOption status=SUCCESS method=RadioButtonTest.selectFemaleOption()[pri:2, instance:tests.RadioButtonTest@3a12c404] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- handleTestResult -->
+        <test-method is-config="true" signature="tearDownClass()[pri:0, instance:tests.RadioButtonTest@3a12c404]" started-at="2025-10-08T00:46:32 EDT" name="tearDownClass" finished-at="2025-10-08T00:46:32 EDT" duration-ms="112" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDownClass -->
+        <test-method is-config="true" signature="tearDownAllDrivers()[pri:0, instance:tests.RadioButtonTest@3a12c404]" started-at="2025-10-08T00:46:32 EDT" name="tearDownAllDrivers" finished-at="2025-10-08T00:46:32 EDT" duration-ms="0" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDownAllDrivers -->
+      </class> <!-- tests.RadioButtonTest -->
+      <class name="tests.LoginPageTest">
+        <test-method is-config="true" signature="setupExtentReport()[pri:0, instance:tests.LoginPageTest@5b1ebf56]" started-at="2025-10-08T00:46:27 EDT" name="setupExtentReport" finished-at="2025-10-08T00:46:27 EDT" duration-ms="4" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setupExtentReport -->
+        <test-method is-config="true" signature="initExtentForClass()[pri:0, instance:tests.LoginPageTest@5b1ebf56]" started-at="2025-10-08T00:46:27 EDT" name="initExtentForClass" finished-at="2025-10-08T00:46:27 EDT" duration-ms="0" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- initExtentForClass -->
+        <test-method is-config="true" signature="setUp()[pri:0, instance:tests.LoginPageTest@5b1ebf56]" started-at="2025-10-08T00:46:27 EDT" name="setUp" finished-at="2025-10-08T00:46:29 EDT" duration-ms="1917" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method signature="validatePageTitle()[pri:0, instance:tests.LoginPageTest@5b1ebf56]" started-at="2025-10-08T00:46:29 EDT" name="validatePageTitle" finished-at="2025-10-08T00:46:29 EDT" duration-ms="18" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- validatePageTitle -->
+        <test-method is-config="true" signature="closeBrowser()[pri:0, instance:tests.LoginPageTest@5b1ebf56]" started-at="2025-10-08T00:46:29 EDT" name="closeBrowser" finished-at="2025-10-08T00:46:29 EDT" duration-ms="115" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- closeBrowser -->
+        <test-method is-config="true" signature="handleTestResult(org.testng.ITestResult)[pri:0, instance:tests.LoginPageTest@5b1ebf56]" started-at="2025-10-08T00:46:29 EDT" name="handleTestResult" finished-at="2025-10-08T00:46:29 EDT" duration-ms="0" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=validatePageTitle status=SUCCESS method=LoginPageTest.validatePageTitle()[pri:0, instance:tests.LoginPageTest@5b1ebf56] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- handleTestResult -->
+        <test-method is-config="true" signature="setUp()[pri:0, instance:tests.LoginPageTest@5b1ebf56]" started-at="2025-10-08T00:46:29 EDT" name="setUp" finished-at="2025-10-08T00:46:29 EDT" duration-ms="559" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method signature="loginWithValidCredentials()[pri:1, instance:tests.LoginPageTest@5b1ebf56]" started-at="2025-10-08T00:46:29 EDT" name="loginWithValidCredentials" finished-at="2025-10-08T00:46:30 EDT" duration-ms="221" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- loginWithValidCredentials -->
+        <test-method is-config="true" signature="closeBrowser()[pri:0, instance:tests.LoginPageTest@5b1ebf56]" started-at="2025-10-08T00:46:30 EDT" name="closeBrowser" finished-at="2025-10-08T00:46:30 EDT" duration-ms="61" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- closeBrowser -->
+        <test-method is-config="true" signature="handleTestResult(org.testng.ITestResult)[pri:0, instance:tests.LoginPageTest@5b1ebf56]" started-at="2025-10-08T00:46:30 EDT" name="handleTestResult" finished-at="2025-10-08T00:46:30 EDT" duration-ms="0" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=loginWithValidCredentials status=SUCCESS method=LoginPageTest.loginWithValidCredentials()[pri:1, instance:tests.LoginPageTest@5b1ebf56] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- handleTestResult -->
+        <test-method is-config="true" signature="setUp()[pri:0, instance:tests.LoginPageTest@5b1ebf56]" started-at="2025-10-08T00:46:30 EDT" name="setUp" finished-at="2025-10-08T00:46:30 EDT" duration-ms="595" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method signature="loginWithInvalidCredentials()[pri:2, instance:tests.LoginPageTest@5b1ebf56]" started-at="2025-10-08T00:46:30 EDT" name="loginWithInvalidCredentials" finished-at="2025-10-08T00:46:30 EDT" duration-ms="207" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- loginWithInvalidCredentials -->
+        <test-method is-config="true" signature="closeBrowser()[pri:0, instance:tests.LoginPageTest@5b1ebf56]" started-at="2025-10-08T00:46:30 EDT" name="closeBrowser" finished-at="2025-10-08T00:46:31 EDT" duration-ms="64" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- closeBrowser -->
+        <test-method is-config="true" signature="handleTestResult(org.testng.ITestResult)[pri:0, instance:tests.LoginPageTest@5b1ebf56]" started-at="2025-10-08T00:46:31 EDT" name="handleTestResult" finished-at="2025-10-08T00:46:31 EDT" duration-ms="0" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=loginWithInvalidCredentials status=SUCCESS method=LoginPageTest.loginWithInvalidCredentials()[pri:2, instance:tests.LoginPageTest@5b1ebf56] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- handleTestResult -->
+        <test-method is-config="true" signature="tearDownAllDrivers()[pri:0, instance:tests.LoginPageTest@5b1ebf56]" started-at="2025-10-08T00:46:31 EDT" name="tearDownAllDrivers" finished-at="2025-10-08T00:46:31 EDT" duration-ms="56" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDownAllDrivers -->
+      </class> <!-- tests.LoginPageTest -->
+      <class name="tests.DropdownTest">
+        <test-method is-config="true" signature="initExtentForClass()[pri:0, instance:tests.DropdownTest@43f82e78]" started-at="2025-10-08T00:46:47 EDT" name="initExtentForClass" finished-at="2025-10-08T00:46:47 EDT" duration-ms="0" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- initExtentForClass -->
+        <test-method is-config="true" signature="setUpClass()[pri:0, instance:tests.DropdownTest@43f82e78]" started-at="2025-10-08T00:46:47 EDT" name="setUpClass" finished-at="2025-10-08T00:46:48 EDT" duration-ms="758" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUpClass -->
+        <test-method is-config="true" signature="navigateToDropdown()[pri:0, instance:tests.DropdownTest@43f82e78]" started-at="2025-10-08T00:46:48 EDT" name="navigateToDropdown" finished-at="2025-10-08T00:46:48 EDT" duration-ms="34" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- navigateToDropdown -->
+        <test-method signature="testSelectCountry()[pri:1, instance:tests.DropdownTest@43f82e78]" started-at="2025-10-08T00:46:48 EDT" name="testSelectCountry" finished-at="2025-10-08T00:46:48 EDT" duration-ms="74" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testSelectCountry -->
+        <test-method is-config="true" signature="handleTestResult(org.testng.ITestResult)[pri:0, instance:tests.DropdownTest@43f82e78]" started-at="2025-10-08T00:46:48 EDT" name="handleTestResult" finished-at="2025-10-08T00:46:48 EDT" duration-ms="1" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=testSelectCountry status=SUCCESS method=DropdownTest.testSelectCountry()[pri:1, instance:tests.DropdownTest@43f82e78] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- handleTestResult -->
+        <test-method is-config="true" signature="navigateToDropdown()[pri:0, instance:tests.DropdownTest@43f82e78]" started-at="2025-10-08T00:46:48 EDT" name="navigateToDropdown" finished-at="2025-10-08T00:46:48 EDT" duration-ms="24" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- navigateToDropdown -->
+        <test-method signature="testAllDropdownOptions()[pri:2, instance:tests.DropdownTest@43f82e78]" started-at="2025-10-08T00:46:48 EDT" name="testAllDropdownOptions" finished-at="2025-10-08T00:46:48 EDT" duration-ms="34" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testAllDropdownOptions -->
+        <test-method is-config="true" signature="handleTestResult(org.testng.ITestResult)[pri:0, instance:tests.DropdownTest@43f82e78]" started-at="2025-10-08T00:46:48 EDT" name="handleTestResult" finished-at="2025-10-08T00:46:48 EDT" duration-ms="1" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=testAllDropdownOptions status=SUCCESS method=DropdownTest.testAllDropdownOptions()[pri:2, instance:tests.DropdownTest@43f82e78] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- handleTestResult -->
+        <test-method is-config="true" signature="navigateToDropdown()[pri:0, instance:tests.DropdownTest@43f82e78]" started-at="2025-10-08T00:46:48 EDT" name="navigateToDropdown" finished-at="2025-10-08T00:46:48 EDT" duration-ms="23" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- navigateToDropdown -->
+        <test-method signature="testIsOptionPresentInCityDropdown()[pri:3, instance:tests.DropdownTest@43f82e78]" started-at="2025-10-08T00:46:48 EDT" name="testIsOptionPresentInCityDropdown" finished-at="2025-10-08T00:46:48 EDT" duration-ms="36" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testIsOptionPresentInCityDropdown -->
+        <test-method is-config="true" signature="handleTestResult(org.testng.ITestResult)[pri:0, instance:tests.DropdownTest@43f82e78]" started-at="2025-10-08T00:46:48 EDT" name="handleTestResult" finished-at="2025-10-08T00:46:48 EDT" duration-ms="0" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=testIsOptionPresentInCityDropdown status=SUCCESS method=DropdownTest.testIsOptionPresentInCityDropdown()[pri:3, instance:tests.DropdownTest@43f82e78] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- handleTestResult -->
+        <test-method is-config="true" signature="navigateToDropdown()[pri:0, instance:tests.DropdownTest@43f82e78]" started-at="2025-10-08T00:46:48 EDT" name="navigateToDropdown" finished-at="2025-10-08T00:46:48 EDT" duration-ms="24" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- navigateToDropdown -->
+        <test-method signature="testIsCountryDropdownMultiSelect()[pri:4, instance:tests.DropdownTest@43f82e78]" started-at="2025-10-08T00:46:48 EDT" name="testIsCountryDropdownMultiSelect" finished-at="2025-10-08T00:46:48 EDT" duration-ms="8" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testIsCountryDropdownMultiSelect -->
+        <test-method is-config="true" signature="handleTestResult(org.testng.ITestResult)[pri:0, instance:tests.DropdownTest@43f82e78]" started-at="2025-10-08T00:46:48 EDT" name="handleTestResult" finished-at="2025-10-08T00:46:48 EDT" duration-ms="1" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=testIsCountryDropdownMultiSelect status=SUCCESS method=DropdownTest.testIsCountryDropdownMultiSelect()[pri:4, instance:tests.DropdownTest@43f82e78] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- handleTestResult -->
+        <test-method is-config="true" signature="tearDownClass()[pri:0, instance:tests.DropdownTest@43f82e78]" started-at="2025-10-08T00:46:48 EDT" name="tearDownClass" finished-at="2025-10-08T00:46:48 EDT" duration-ms="108" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDownClass -->
+        <test-method is-config="true" signature="tearDownAllDrivers()[pri:0, instance:tests.DropdownTest@43f82e78]" started-at="2025-10-08T00:46:48 EDT" name="tearDownAllDrivers" finished-at="2025-10-08T00:46:48 EDT" duration-ms="0" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDownAllDrivers -->
+      </class> <!-- tests.DropdownTest -->
+    </test> <!-- Regression Test Suite -->
+  </suite> <!-- ZSolution Automation Regression Suite -->
 </testng-results>

@@ -5,12 +5,13 @@ pipeline {
         MAVEN_HOME = tool name: 'Maven3', type: 'maven'
         PATH = "${MAVEN_HOME}/bin:${PATH}"
     }
+
     stages {
 
         stage('Checkout Code') {
             steps {
                 echo "✅ Checking out source code..."
-                git branch: 'main', url: 'https://github.com/khosruz/ZSolutionAutomationProject.git'
+                git branch: 'main', url: 'https://github.com/goodtogo01/ZSolutionAutomationProject'
             }
         }
 
@@ -30,27 +31,29 @@ pipeline {
 
 stage('Generate Extent Report') {
     steps {
-        echo "📊 Preparing Extent report..."
+        echo "📊 Collecting Extent report..."
         script {
-            // Create a folder under workspace for Jenkins to read
-            sh 'mkdir -p target/extent-report'
-            
-            // Copy your existing ExtentReport.html to target folder
-            sh 'cp /Users/khosruzzaman/ALL_JAVA/FrameWork/ZSolutionAutomationProject/test-output/ExtentReport.html target/extent-report/index.html'
+            // Copy the entire folder, not just the HTML file
+            sh '''
+                mkdir -p target/extent-report
+                cp -r test-output/* target/extent-report/
+                ls -la target/extent-report/
+            '''
         }
     }
 }
 
 stage('Publish Test Reports') {
     steps {
-        echo "📢 Publishing Extent HTML Report..."
+        echo "📢 Publishing Extent Reports..."
         publishHTML([
-            reportDir: 'target/extent-report',  // folder inside Jenkins workspace
-            reportFiles: 'index.html',          // renamed from ExtentReport.html
-            reportName: 'Extent Test Report',
+            reportDir: 'target/extent-report',
+            reportFiles: 'ExtentReport.html',
+            reportName: 'Extent Report',
             keepAll: true,
             alwaysLinkToLastBuild: true,
-            allowMissing: false
+            allowMissing: false,
+            includes: '**/*'   // 👈 Important: ensures CSS/JS are included
         ])
     }
 }
