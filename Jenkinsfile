@@ -4,6 +4,7 @@ pipeline {
     environment {
         MAVEN_HOME = tool name: 'Maven3', type: 'maven'
         PATH = "${MAVEN_HOME}/bin:${PATH}"
+        HEADLESS = "true"   // Headless browser execution
     }
 
     stages {
@@ -24,32 +25,32 @@ pipeline {
 
         stage('Run Automation Tests') {
             steps {
-                echo "🧪 Running Selenium + TestNG tests..."
-                sh 'mvn test'
+                echo "🧪 Running Selenium + TestNG tests in headless mode..."
+                sh 'mvn test -DHEADLESS=true'
             }
         }
 
         stage('Generate Extent Report') {
             steps {
-                echo "📊 Collecting Extent report..."
+                echo "📊 Preparing Extent report..."
                 script {
-                    // Move report to Jenkins accessible location
+                    // Make sure the report directory exists and copy reports
                     sh 'mkdir -p target/extent-report'
-                    sh 'cp -r test-output/* target/extent-report/ || true'
+                    sh 'cp -r test-output/ExtentReport/* target/extent-report/ || true'
                 }
             }
         }
 
         stage('Publish Test Reports') {
             steps {
-                echo "📢 Publishing TestNG & Extent Reports..."
-                publishHTML([ 
-                    reportDir: 'target/extent-report', 
-                    reportFiles: 'extent-report.html', 
-                    reportName: 'Extent Report', 
-                    keepAll: true, 
-                    alwaysLinkToLastBuild: true, 
-                    allowMissing: true 
+                echo "📢 Publishing Extent HTML Report..."
+                publishHTML([
+                    reportDir: 'target/extent-report',
+                    reportFiles: 'index.html',      // Ensure this matches your ExtentReport output file
+                    reportName: 'Extent Test Report',
+                    keepAll: true,
+                    alwaysLinkToLastBuild: true,
+                    allowMissing: false
                 ])
             }
         }
@@ -65,7 +66,7 @@ pipeline {
             echo "✅ Pipeline completed successfully!"
         }
         failure {
-            echo "❌ Pipeline failed. Please check logs and Extent Report."
+            echo "❌ Pipeline failed. Check logs and Extent Report!"
         }
     }
 }
