@@ -4,15 +4,13 @@ pipeline {
     environment {
         MAVEN_HOME = tool name: 'Maven3', type: 'maven'
         PATH = "${MAVEN_HOME}/bin:${PATH}"
-        HEADLESS = "true"   // Headless browser execution
     }
-
     stages {
 
         stage('Checkout Code') {
             steps {
                 echo "✅ Checking out source code..."
-                git branch: 'main', url: 'https://github.com/goodtogo01/ZSolutionAutomationProject'
+                git branch: 'main', url: 'https://github.com/khosruz/ZSolutionAutomationProject.git'
             }
         }
 
@@ -25,35 +23,37 @@ pipeline {
 
         stage('Run Automation Tests') {
             steps {
-                echo "🧪 Running Selenium + TestNG tests in headless mode..."
-                sh 'mvn test -DHEADLESS=true'
+                echo "🧪 Running Selenium + TestNG tests..."
+                sh 'mvn test'
             }
         }
 
-        stage('Generate Extent Report') {
-            steps {
-                echo "📊 Preparing Extent report..."
-                script {
-                    // Make sure the report directory exists and copy reports
-                    sh 'mkdir -p target/extent-report'
-                    sh 'cp -r test-output/ExtentReport/* target/extent-report/ || true'
-                }
-            }
+stage('Generate Extent Report') {
+    steps {
+        echo "📊 Preparing Extent report..."
+        script {
+            // Create a folder under workspace for Jenkins to read
+            sh 'mkdir -p target/extent-report'
+            
+            // Copy your existing ExtentReport.html to target folder
+            sh 'cp /Users/khosruzzaman/ALL_JAVA/FrameWork/ZSolutionAutomationProject/test-output/ExtentReport.html target/extent-report/index.html'
         }
+    }
+}
 
-        stage('Publish Test Reports') {
-            steps {
-                echo "📢 Publishing Extent HTML Report..."
-                publishHTML([
-                    reportDir: 'target/extent-report',
-                    reportFiles: 'index.html',      // Ensure this matches your ExtentReport output file
-                    reportName: 'Extent Test Report',
-                    keepAll: true,
-                    alwaysLinkToLastBuild: true,
-                    allowMissing: false
-                ])
-            }
-        }
+stage('Publish Test Reports') {
+    steps {
+        echo "📢 Publishing Extent HTML Report..."
+        publishHTML([
+            reportDir: 'target/extent-report',  // folder inside Jenkins workspace
+            reportFiles: 'index.html',          // renamed from ExtentReport.html
+            reportName: 'Extent Test Report',
+            keepAll: true,
+            alwaysLinkToLastBuild: true,
+            allowMissing: false
+        ])
+    }
+}
 
     }
 
@@ -66,7 +66,7 @@ pipeline {
             echo "✅ Pipeline completed successfully!"
         }
         failure {
-            echo "❌ Pipeline failed. Check logs and Extent Report!"
+            echo "❌ Pipeline failed. Please check logs and Extent Report."
         }
     }
 }

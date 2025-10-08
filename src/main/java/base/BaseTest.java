@@ -98,6 +98,7 @@ public class BaseTest {
                     ChromeOptions options = new ChromeOptions();
                     options.addArguments("--start-maximized");
                     options.addArguments("--remote-allow-origins=*");
+                    options.addArguments("--headless");
                     driver.set(new ChromeDriver(options));
                     break;
 
