@@ -35,6 +35,10 @@ public class SeleniumUtils {
 	public WebElement waitForElementVisible(By locator) {
 		return wait.until(ExpectedConditions.visibilityOfElementLocated(locator));
 	}
+	 // Wait until element is clickable
+    public WebElement waitForElementClickable(By logoutButton) {
+        return wait.until(ExpectedConditions.elementToBeClickable(logoutButton));
+    }
 
 	// Click Element
 	public void click(By locator) {
@@ -204,4 +208,10 @@ public class SeleniumUtils {
 		FileUtils.copyFile(srcFile, new File(curentDir + "/Screen_Shoot/" + System.currentTimeMillis() + ".png"));
 
 	}
+
+
+    // Wait until text appears in element
+    public boolean waitForTextToBePresent(By locator, String text) {
+        return wait.until(ExpectedConditions.textToBePresentInElementLocated(locator, text));
+    }
 }

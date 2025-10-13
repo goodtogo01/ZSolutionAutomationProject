@@ -37,7 +37,7 @@ public class ScreenshotUtility {
 			driver.getTitle(); // simple no-op call that fails if browser closed
 
 			File src = ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);
-			String destPath = System.getProperty("user.dir") + "/screenshots/" + screenshotName + ".png";
+			String destPath = System.getProperty("user.dir") + "/Screen_Shoot/" + screenshotName + ".png";
 			FileUtils.copyFile(src, new File(destPath));
 			return destPath;
 

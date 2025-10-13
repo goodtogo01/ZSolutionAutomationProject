@@ -68,7 +68,7 @@ public class TextBoxTest extends BaseTest {
 
 		textBoxPage.userDetails(name, email, address);
 		textBoxPage.clickSubmit();
-		SeleniumUtils.takeScreenShoot();
+		// SeleniumUtils.takeScreenShoot();
 
 		Assert.assertEquals(textBoxPage.getdOutputName(), name, "❌ Name output does not match!");
 		Assert.assertEquals(textBoxPage.getdOutputEmail(), email, "❌ Email output does not match!");

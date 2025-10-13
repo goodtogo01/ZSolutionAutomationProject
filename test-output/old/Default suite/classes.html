@@ -4,38 +4,22 @@
 <th>Method name</th>
 <th>Groups</th>
 </tr><tr>
-<td>tests.WebTableTest</td>
+<td>tests.LoginPageTest</td>
 <td>&nbsp;</td><td>&nbsp;</td></tr>
 <tr>
 <td align='center' colspan='3'>@Test</td>
 </tr>
 <tr>
 <td>&nbsp;</td>
-<td>testDynamicRoleValidation</td>
+<td>validatePageTitle</td>
 <td>&nbsp;</td></tr>
 <tr>
 <td>&nbsp;</td>
-<td>testRowCount</td>
+<td>loginWithValidCredentials</td>
 <td>&nbsp;</td></tr>
 <tr>
 <td>&nbsp;</td>
-<td>testDeleteRecord</td>
-<td>&nbsp;</td></tr>
-<tr>
-<td>&nbsp;</td>
-<td>testAddNewRecordAndSearch</td>
-<td>&nbsp;</td></tr>
-<tr>
-<td>&nbsp;</td>
-<td>testFilterByLocation</td>
-<td>&nbsp;</td></tr>
-<tr>
-<td>&nbsp;</td>
-<td>testSearchSpecificRecord</td>
-<td>&nbsp;</td></tr>
-<tr>
-<td>&nbsp;</td>
-<td>testFetchAndPrintData</td>
+<td>loginWithInvalidCredentials</td>
 <td>&nbsp;</td></tr>
 <tr>
 <td align='center' colspan='3'>@BeforeClass</td>
@@ -45,15 +29,20 @@
 <td>initExtentForClass</td>
 <td>&nbsp;</td></tr>
 <tr>
-<td>&nbsp;</td>
-<td>setUpClass</td>
-<td>&nbsp;</td></tr>
-<tr>
 <td align='center' colspan='3'>@BeforeMethod</td>
+</tr>
+<tr>
+<td>&nbsp;</td>
+<td>setUp</td>
+<td>Initializations </td>
 </tr>
 <tr>
 <td align='center' colspan='3'>@AfterMethod</td>
 </tr>
+<tr>
+<td>&nbsp;</td>
+<td>closeBrowser</td>
+<td>&nbsp;</td></tr>
 <tr>
 <td>&nbsp;</td>
 <td>handleTestResult</td>
@@ -61,10 +50,6 @@
 <tr>
 <td align='center' colspan='3'>@AfterClass</td>
 </tr>
-<tr>
-<td>&nbsp;</td>
-<td>tearDownClass</td>
-<td>&nbsp;</td></tr>
 <tr>
 <td>&nbsp;</td>
 <td>tearDownAllDrivers</td>

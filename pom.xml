@@ -125,7 +125,9 @@
                 <version>3.2.5</version>
                 <configuration>
                     <suiteXmlFiles>
-                        <suiteXmlFile>regression.xml</suiteXmlFile>
+                    <!--  <suiteXmlFile>regression.xml</suiteXmlFile>
+                          <suiteXmlFile>sanity.xml</suiteXmlFile> -->
+                          <suiteXmlFile>regression.xml</suiteXmlFile>
                     </suiteXmlFiles>
                     <reportsDirectory>${project.build.directory}/surefire-reports</reportsDirectory>
                     <testFailureIgnore>false</testFailureIgnore>

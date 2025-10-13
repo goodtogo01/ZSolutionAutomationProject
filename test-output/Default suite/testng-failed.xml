@@ -3,18 +3,17 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="tests.CheckBoxTest">
+      <class name="tests.LoginPageTest">
         <methods>
-          <include name="tearDownClass"/>
+          <include name="endToEndLoginWithValidCredentials"/>
           <include name="initExtentForClass"/>
-          <include name="testSelectEachCheckBoxes"/>
-          <include name="navigateToCheckBoxSection"/>
           <include name="tearDownAllDrivers"/>
-          <include name="setUpClass"/>
+          <include name="setUp"/>
           <include name="setupExtentReport"/>
           <include name="handleTestResult"/>
+          <include name="closeBrowser"/>
         </methods>
-      </class> <!-- tests.CheckBoxTest -->
+      </class> <!-- tests.LoginPageTest -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

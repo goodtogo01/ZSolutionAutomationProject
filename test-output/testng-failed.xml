@@ -1,46 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
-<suite name="Failed suite [ZSolution Automation Regression Suite]" guice-stage="DEVELOPMENT">
-  <listeners>
-    <listener class-name="utils.ExtentTestNGListener"/>
-  </listeners>
-  <test thread-count="5" name="Regression Test Suite(failed)">
+<suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
+  <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="tests.WebTableTest">
-        <methods>
-          <include name="testFilterByLocation"/>
-          <include name="initExtentForClass"/>
-          <include name="tearDownClass"/>
-          <include name="testSearchSpecificRecord"/>
-          <include name="testFetchAndPrintData"/>
-          <include name="testAddNewRecordAndSearch"/>
-          <include name="tearDownAllDrivers"/>
-          <include name="setUpClass"/>
-          <include name="setupExtentReport"/>
-          <include name="testDynamicRoleValidation"/>
-          <include name="handleTestResult"/>
-          <include name="testRowCount"/>
-          <include name="testDeleteRecord"/>
-        </methods>
-      </class> <!-- tests.WebTableTest -->
-      <class name="tests.DropdownTest">
-        <methods>
-          <include name="initExtentForClass"/>
-          <include name="testSelectCountry"/>
-          <include name="navigateToDropdown"/>
-          <include name="tearDownClass"/>
-          <include name="tearDownAllDrivers"/>
-          <include name="testIsOptionPresentInCityDropdown"/>
-          <include name="setupExtentReport"/>
-          <include name="testIsCountryDropdownMultiSelect"/>
-          <include name="testAllDropdownOptions"/>
-          <include name="handleTestResult"/>
-          <include name="setUpClass"/>
-        </methods>
-      </class> <!-- tests.DropdownTest -->
       <class name="tests.LoginPageTest">
         <methods>
-          <include name="loginWithInvalidCredentials"/>
+          <include name="endToEndLoginWithValidCredentials"/>
           <include name="initExtentForClass"/>
           <include name="tearDownAllDrivers"/>
           <include name="setUp"/>
@@ -49,77 +14,6 @@
           <include name="closeBrowser"/>
         </methods>
       </class> <!-- tests.LoginPageTest -->
-      <class name="tests.IFrameTest">
-        <methods>
-          <include name="initExtentForClass"/>
-          <include name="navigateToIFrameMenu"/>
-          <include name="testVerifyIFrameContentPresence"/>
-          <include name="tearDownAllDrivers"/>
-          <include name="tearDownClass"/>
-          <include name="testSwitchBetweenIFrames"/>
-          <include name="testIFrame1Content"/>
-          <include name="testIFrame2Content"/>
-          <include name="setupExtentReport"/>
-          <include name="handleTestResult"/>
-          <include name="setUpClass"/>
-        </methods>
-      </class> <!-- tests.IFrameTest -->
-      <class name="tests.AlertsAndPopupTest">
-        <methods>
-          <include name="initExtentForClass"/>
-          <include name="tearDownClass"/>
-          <include name="setUpClass"/>
-          <include name="promptAlertHandling"/>
-          <include name="basicAlertHandling"/>
-          <include name="confirmationAlertHandling"/>
-          <include name="tearDownAllDrivers"/>
-          <include name="navigateToAlertMenu"/>
-          <include name="setupExtentReport"/>
-          <include name="handleTestResult"/>
-        </methods>
-      </class> <!-- tests.AlertsAndPopupTest -->
-      <class name="tests.RadioButtonTest">
-        <methods>
-          <include name="initExtentForClass"/>
-          <include name="tearDownClass"/>
-          <include name="navigateToRadioButtonMenu"/>
-          <include name="selectFemaleOption"/>
-          <include name="tearDownAllDrivers"/>
-          <include name="setUpClass"/>
-          <include name="selectMaleAge_18_25"/>
-          <include name="setupExtentReport"/>
-          <include name="handleTestResult"/>
-        </methods>
-      </class> <!-- tests.RadioButtonTest -->
-      <class name="tests.CheckBoxTest">
-        <methods>
-          <include name="tearDownClass"/>
-          <include name="testNavigateToCheckBoxMenu"/>
-          <include name="initExtentForClass"/>
-          <include name="testSelectEachCheckBoxes"/>
-          <include name="navigateToCheckBoxSection"/>
-          <include name="validatePageTitle"/>
-          <include name="tearDownAllDrivers"/>
-          <include name="testDeselectIndividualCheckBox"/>
-          <include name="setUpClass"/>
-          <include name="setupExtentReport"/>
-          <include name="handleTestResult"/>
-          <include name="testDeselectAllCheckBoxes"/>
-          <include name="testSelectIndividualCheckBox"/>
-        </methods>
-      </class> <!-- tests.CheckBoxTest -->
-      <class name="tests.TextBoxTest">
-        <methods>
-          <include name="initExtentForClass"/>
-          <include name="navigateToTextBoxPage"/>
-          <include name="tearDownAllDrivers"/>
-          <include name="setupExtentReport"/>
-          <include name="setUpClass"/>
-          <include name="handleTestResult"/>
-          <include name="tearDownClass"/>
-          <include name="testTextBox"/>
-        </methods>
-      </class> <!-- tests.TextBoxTest -->
     </classes>
-  </test> <!-- Regression Test Suite(failed) -->
-</suite> <!-- Failed suite [ZSolution Automation Regression Suite] -->
+  </test> <!-- Default test(failed) -->
+</suite> <!-- Failed suite [Default suite] -->

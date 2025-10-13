@@ -3,6 +3,7 @@ package tests;
 import java.io.IOException;
 import java.net.MalformedURLException;
 
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.testng.Assert;
 import org.testng.annotations.AfterMethod;
@@ -16,7 +17,7 @@ import utils.SeleniumUtils;
 public class LoginPageTest extends BaseTest {
 
 	private LoginPage loginPage;
-	private SeleniumUtils seleniumUtils;
+	public SeleniumUtils seleniumUtils;
 	private WebDriver driver; // Local reference for easy access
 
 	public LoginPageTest() {
@@ -49,7 +50,7 @@ public class LoginPageTest extends BaseTest {
 		loginPage.setUserName(BaseTest.prop.getProperty("userName"));
 		loginPage.setPassword(BaseTest.prop.getProperty("password"));
 		loginPage.clickOnLoginButton();
-		loginPage.clickOnLogoutButton();
+		//loginPage.clickOnLogoutButton();
 
 		test.pass("✅ Login and logout succeeded with valid credentials.");
 	}
@@ -69,6 +70,22 @@ public class LoginPageTest extends BaseTest {
 		SeleniumUtils.takeScreenShoot();
 
 		test.pass("✅ Invalid login correctly prevented access.");
+	}
+	//@Test(priority = 3)
+	public void endToEndLoginWithValidCredentials() throws InterruptedException {
+	    test = extent.createTest("Test to Login With Valid Credentials and successfully logout");
+
+	    loginPage.setUserName(BaseTest.prop.getProperty("userName"));
+	    loginPage.setPassword(BaseTest.prop.getProperty("password"));
+	    loginPage.clickOnLoginButton();
+
+	    // ✅ Wait for successful login (optional check)
+	   seleniumUtils.waitForTextToBePresent(By.tagName("button"), "Logout");
+
+	    // ✅ Perform logout
+	    loginPage.clickOnLogoutButton();
+
+	    test.pass("✅ End-to-End Login and Logout succeeded with valid credentials.");
 	}
 
 	@AfterMethod(alwaysRun = true)

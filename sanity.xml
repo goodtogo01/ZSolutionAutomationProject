@@ -7,7 +7,7 @@
   <test thread-count="5" name="Sanity Test">
     <classes>
 
-      <class name="tests.CheckBoxTest"/>
+      <class name="tests.RadioButtonTest"/>
  
     </classes>
   </test> <!-- Test -->

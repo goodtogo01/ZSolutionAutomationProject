@@ -5,6 +5,7 @@ import java.net.MalformedURLException;
 
 import org.openqa.selenium.WebDriver;
 import org.testng.Assert;
+import org.testng.AssertJUnit;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.BeforeMethod;
@@ -66,7 +67,7 @@ public class RadioButtonTest extends BaseTest {
 		Assert.assertTrue(radioButtonPage.isParticulerAgeSelected1825(),
 				"❌ Age 18-25 radio button should be selected!");
 
-		SeleniumUtils.takeScreenShoot();
+		
 		test.pass("✅ Male option and age group 18-25 selected successfully.");
 	}
 
