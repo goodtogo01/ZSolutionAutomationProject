@@ -5,16 +5,14 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
-
 public class LoginPage {
 
 	private WebDriver driver;
 
 	@FindBy(xpath = "//*[@id='username']")
 	private WebElement userName;
-	
-	//*[@id='username']
 
+	// *[@id='username']
 
 	@FindBy(xpath = "//*[@id='password']")
 	private WebElement passwords;
@@ -35,7 +33,7 @@ public class LoginPage {
 
 	// Set User name
 	public void setUserName(String user) {
-		 userName.sendKeys(user);
+		userName.sendKeys(user);
 	}
 
 	// Set Password

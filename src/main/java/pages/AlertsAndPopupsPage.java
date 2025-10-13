@@ -7,8 +7,6 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.NoAlertPresentException;
 import org.openqa.selenium.WebDriver;
 
-import utils.SeleniumUtils;
-
 public class AlertsAndPopupsPage {
 	private WebDriver driver;
 
@@ -41,15 +39,17 @@ public class AlertsAndPopupsPage {
 		driver.findElement(promptAlert).click();
 
 	}
-	
-	//prompt operation
+
+	// prompt operation
 	public void acceptAlert() {
 		handleAlertAndGetText(true);
 	}
-	//prompt operation
+
+	// prompt operation
 	public void dismisAlert() {
 		handleAlertAndGetText(false);
 	}
+
 	public String getAlertText() {
 		return handleAlertAndGetText(false);
 	}
@@ -72,51 +72,40 @@ public class AlertsAndPopupsPage {
 		}
 		return null;
 	}
-	//Hangle Prompt alert
+
+	// Hangle Prompt alert
 	public void hanglePromptAlert(boolean accept) {
 		try {
 			Alert alert = driver.switchTo().alert();
 			String alertText = alert.getText();
 			System.out.println("Alert Text captured as : " + alertText);
-			
-			if(accept) {
+
+			if (accept) {
 				alert.accept();
-			}else {
+			} else {
 				alert.dismiss();
 			}
-			
+
 		} catch (NoAlertPresentException e) {
 			System.out.println("No Alert is available");
 		}
 	}
+
 // Handle input alert
 	public void handleInputAlert(String TextToEnter, boolean accept) throws IOException {
 		try {
 			Alert alert = driver.switchTo().alert();
 			alert.sendKeys(TextToEnter);
-	 	//acceptAlert();
-		
- 	if(accept) {
+			// acceptAlert();
+
+			if (accept) {
 				alert.accept();
-			}else {
+			} else {
 				alert.dismiss();
 			}
-			
+
 		} catch (NoAlertPresentException e) {
 			System.out.println("No Alert is available");
 		}
 	}
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
