@@ -1,90 +1,44 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="0" total="3" passed="3" failed="0" skipped="0">
+<testng-results ignored="3" total="4" passed="1" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2025-10-13T00:42:25 EDT" name="Default suite" finished-at="2025-10-13T00:42:30 EDT" duration-ms="5181">
+  <suite started-at="2025-10-14T00:14:54 EDT" name="Default suite" finished-at="2025-10-14T00:14:57 EDT" duration-ms="2401">
     <groups>
     </groups>
-    <test started-at="2025-10-13T00:42:25 EDT" name="Default test" finished-at="2025-10-13T00:42:30 EDT" duration-ms="5181">
+    <test started-at="2025-10-14T00:14:54 EDT" name="Default test" finished-at="2025-10-14T00:14:57 EDT" duration-ms="2401">
       <class name="tests.LoginPageTest">
-        <test-method is-config="true" signature="setupExtentReport()[pri:0, instance:tests.LoginPageTest@4a83a74a]" started-at="2025-10-13T00:42:25 EDT" name="setupExtentReport" finished-at="2025-10-13T00:42:25 EDT" duration-ms="98" status="PASS">
+        <test-method is-config="true" signature="setupExtentReport()[pri:0, instance:tests.LoginPageTest@35dab4eb]" started-at="2025-10-14T00:14:54 EDT" name="setupExtentReport" finished-at="2025-10-14T00:14:54 EDT" duration-ms="117" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setupExtentReport -->
-        <test-method is-config="true" signature="initExtentForClass()[pri:0, instance:tests.LoginPageTest@4a83a74a]" started-at="2025-10-13T00:42:25 EDT" name="initExtentForClass" finished-at="2025-10-13T00:42:25 EDT" duration-ms="0" status="PASS">
+        <test-method is-config="true" signature="initExtentForClass()[pri:0, instance:tests.LoginPageTest@35dab4eb]" started-at="2025-10-14T00:14:54 EDT" name="initExtentForClass" finished-at="2025-10-14T00:14:54 EDT" duration-ms="0" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- initExtentForClass -->
-        <test-method is-config="true" signature="setUp()[pri:0, instance:tests.LoginPageTest@4a83a74a]" started-at="2025-10-13T00:42:25 EDT" name="setUp" finished-at="2025-10-13T00:42:27 EDT" duration-ms="2117" status="PASS">
+        <test-method is-config="true" signature="setUp()[pri:0, instance:tests.LoginPageTest@35dab4eb]" started-at="2025-10-14T00:14:54 EDT" name="setUp" finished-at="2025-10-14T00:14:56 EDT" duration-ms="1908" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUp -->
-        <test-method signature="validatePageTitle()[pri:0, instance:tests.LoginPageTest@4a83a74a]" started-at="2025-10-13T00:42:27 EDT" name="validatePageTitle" finished-at="2025-10-13T00:42:27 EDT" duration-ms="18" status="PASS">
+        <test-method signature="endToEndLoginWithValidCredentials()[pri:3, instance:tests.LoginPageTest@35dab4eb]" started-at="2025-10-14T00:14:56 EDT" name="endToEndLoginWithValidCredentials" finished-at="2025-10-14T00:14:57 EDT" duration-ms="307" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- validatePageTitle -->
-        <test-method is-config="true" signature="closeBrowser()[pri:0, instance:tests.LoginPageTest@4a83a74a]" started-at="2025-10-13T00:42:27 EDT" name="closeBrowser" finished-at="2025-10-13T00:42:27 EDT" duration-ms="118" status="PASS">
+        </test-method> <!-- endToEndLoginWithValidCredentials -->
+        <test-method is-config="true" signature="closeBrowser()[pri:0, instance:tests.LoginPageTest@35dab4eb]" started-at="2025-10-14T00:14:57 EDT" name="closeBrowser" finished-at="2025-10-14T00:14:57 EDT" duration-ms="115" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- closeBrowser -->
-        <test-method is-config="true" signature="handleTestResult(org.testng.ITestResult)[pri:0, instance:tests.LoginPageTest@4a83a74a]" started-at="2025-10-13T00:42:27 EDT" name="handleTestResult" finished-at="2025-10-13T00:42:27 EDT" duration-ms="1" status="PASS">
+        <test-method is-config="true" signature="handleTestResult(org.testng.ITestResult)[pri:0, instance:tests.LoginPageTest@35dab4eb]" started-at="2025-10-14T00:14:57 EDT" name="handleTestResult" finished-at="2025-10-14T00:14:57 EDT" duration-ms="1" status="PASS">
           <params>
             <param index="0">
               <value>
-                <![CDATA[[TestResult name=validatePageTitle status=SUCCESS method=LoginPageTest.validatePageTitle()[pri:0, instance:tests.LoginPageTest@4a83a74a] output={null}]]]>
+                <![CDATA[[TestResult name=endToEndLoginWithValidCredentials status=SUCCESS method=LoginPageTest.endToEndLoginWithValidCredentials()[pri:3, instance:tests.LoginPageTest@35dab4eb] output={null}]]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- handleTestResult -->
-        <test-method is-config="true" signature="setUp()[pri:0, instance:tests.LoginPageTest@4a83a74a]" started-at="2025-10-13T00:42:27 EDT" name="setUp" finished-at="2025-10-13T00:42:28 EDT" duration-ms="1124" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- setUp -->
-        <test-method signature="loginWithValidCredentials()[pri:1, instance:tests.LoginPageTest@4a83a74a]" started-at="2025-10-13T00:42:28 EDT" name="loginWithValidCredentials" finished-at="2025-10-13T00:42:28 EDT" duration-ms="313" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- loginWithValidCredentials -->
-        <test-method is-config="true" signature="closeBrowser()[pri:0, instance:tests.LoginPageTest@4a83a74a]" started-at="2025-10-13T00:42:28 EDT" name="closeBrowser" finished-at="2025-10-13T00:42:29 EDT" duration-ms="112" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- closeBrowser -->
-        <test-method is-config="true" signature="handleTestResult(org.testng.ITestResult)[pri:0, instance:tests.LoginPageTest@4a83a74a]" started-at="2025-10-13T00:42:29 EDT" name="handleTestResult" finished-at="2025-10-13T00:42:29 EDT" duration-ms="0" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[[TestResult name=loginWithValidCredentials status=SUCCESS method=LoginPageTest.loginWithValidCredentials()[pri:1, instance:tests.LoginPageTest@4a83a74a] output={null}]]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- handleTestResult -->
-        <test-method is-config="true" signature="setUp()[pri:0, instance:tests.LoginPageTest@4a83a74a]" started-at="2025-10-13T00:42:29 EDT" name="setUp" finished-at="2025-10-13T00:42:29 EDT" duration-ms="842" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- setUp -->
-        <test-method signature="loginWithInvalidCredentials()[pri:2, instance:tests.LoginPageTest@4a83a74a]" started-at="2025-10-13T00:42:29 EDT" name="loginWithInvalidCredentials" finished-at="2025-10-13T00:42:30 EDT" duration-ms="389" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- loginWithInvalidCredentials -->
-        <test-method is-config="true" signature="closeBrowser()[pri:0, instance:tests.LoginPageTest@4a83a74a]" started-at="2025-10-13T00:42:30 EDT" name="closeBrowser" finished-at="2025-10-13T00:42:30 EDT" duration-ms="70" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- closeBrowser -->
-        <test-method is-config="true" signature="handleTestResult(org.testng.ITestResult)[pri:0, instance:tests.LoginPageTest@4a83a74a]" started-at="2025-10-13T00:42:30 EDT" name="handleTestResult" finished-at="2025-10-13T00:42:30 EDT" duration-ms="0" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[[TestResult name=loginWithInvalidCredentials status=SUCCESS method=LoginPageTest.loginWithInvalidCredentials()[pri:2, instance:tests.LoginPageTest@4a83a74a] output={null}]]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- handleTestResult -->
-        <test-method is-config="true" signature="tearDownAllDrivers()[pri:0, instance:tests.LoginPageTest@4a83a74a]" started-at="2025-10-13T00:42:30 EDT" name="tearDownAllDrivers" finished-at="2025-10-13T00:42:30 EDT" duration-ms="56" status="PASS">
+        <test-method is-config="true" signature="tearDownAllDrivers()[pri:0, instance:tests.LoginPageTest@35dab4eb]" started-at="2025-10-14T00:14:57 EDT" name="tearDownAllDrivers" finished-at="2025-10-14T00:14:57 EDT" duration-ms="56" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDownAllDrivers -->

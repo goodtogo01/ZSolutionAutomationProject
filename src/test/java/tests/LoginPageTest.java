@@ -71,8 +71,8 @@ public class LoginPageTest extends BaseTest {
 
 		test.pass("✅ Invalid login correctly prevented access.");
 	}
-	//@Test(priority = 3)
-	public void endToEndLoginWithValidCredentials() throws InterruptedException {
+	@Test(priority = 3, expectedExceptionsMessageRegExp = "IllegalArgumentException")
+	public void endToEndLoginWithValidCredentials() throws InterruptedException, IOException {
 	    test = extent.createTest("Test to Login With Valid Credentials and successfully logout");
 
 	    loginPage.setUserName(BaseTest.prop.getProperty("userName"));
@@ -84,6 +84,7 @@ public class LoginPageTest extends BaseTest {
 
 	    // ✅ Perform logout
 	    loginPage.clickOnLogoutButton();
+	    seleniumUtils.takeScreenshot(driver.getTitle());
 
 	    test.pass("✅ End-to-End Login and Logout succeeded with valid credentials.");
 	}
