@@ -103,7 +103,7 @@
                     <div class="method-list-content passed suite-Default_suite">
                       <span>
                         <img src="passed.png" width="3%"/>
-                        <a href="#" panel-name="suite-Default_suite" title="tests.LoginPageTest" class="method navigator-link" hash-for-method="endToEndLoginWithValidCredentials">endToEndLoginWithValidCredentials</a> <!-- method navigator-link -->
+                        <a href="#" panel-name="suite-Default_suite" title="tests.IFrameTest" class="method navigator-link" hash-for-method="testIFrame2Content">testIFrame2Content</a> <!-- method navigator-link -->
                       </span>
                       <br/>
                     </div> <!-- method-list-content passed suite-Default_suite -->
@@ -121,14 +121,14 @@
           <div class="suite-Default_suite-class-passed">
             <div class="main-panel-header rounded-window-top">
               <img src="passed.png"/>
-              <span class="class-name">tests.LoginPageTest</span>
+              <span class="class-name">tests.IFrameTest</span>
             </div> <!-- main-panel-header rounded-window-top -->
             <div class="main-panel-content rounded-window-bottom">
               <div class="method">
                 <div class="method-content">
-                  <a name="endToEndLoginWithValidCredentials">
-                  </a> <!-- endToEndLoginWithValidCredentials -->
-                  <span class="method-name">endToEndLoginWithValidCredentials</span>
+                  <a name="testIFrame2Content">
+                  </a> <!-- testIFrame2Content -->
+                  <span class="method-name">testIFrame2Content</span>
                 </div> <!-- method-content -->
               </div> <!-- method -->
             </div> <!-- main-panel-content rounded-window-bottom -->
@@ -136,7 +136,7 @@
         </div> <!-- panel Default_suite -->
         <div panel-name="test-xml-Default_suite" class="panel">
           <div class="main-panel-header rounded-window-top">
-            <span class="header-content">/private/var/folders/zk/ygw69c096qz6mjq_myp1dmwh0000gn/T/testng-eclipse--1332024557/testng-customsuite.xml</span>
+            <span class="header-content">/private/var/folders/zk/ygw69c096qz6mjq_myp1dmwh0000gn/T/testng-eclipse--1232494568/testng-customsuite.xml</span>
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
             <pre>
@@ -145,11 +145,11 @@
 &lt;suite name=&quot;Default suite&quot; guice-stage=&quot;DEVELOPMENT&quot;&gt;
   &lt;test thread-count=&quot;5&quot; name=&quot;Default test&quot; verbose=&quot;2&quot;&gt;
     &lt;classes&gt;
-      &lt;class name=&quot;tests.LoginPageTest&quot;&gt;
+      &lt;class name=&quot;tests.IFrameTest&quot;&gt;
         &lt;methods&gt;
-          &lt;include name=&quot;endToEndLoginWithValidCredentials&quot;/&gt;
+          &lt;include name=&quot;testIFrame2Content&quot;/&gt;
         &lt;/methods&gt;
-      &lt;/class&gt; &lt;!-- tests.LoginPageTest --&gt;
+      &lt;/class&gt; &lt;!-- tests.IFrameTest --&gt;
     &lt;/classes&gt;
   &lt;/test&gt; &lt;!-- Default test --&gt;
 &lt;/suite&gt; &lt;!-- Default suite --&gt;
@@ -191,14 +191,14 @@ data.addColumn('string', 'Class');
 data.addColumn('number', 'Time (ms)');
 data.addRows(1);
 data.setCell(0, 0, 0)
-data.setCell(0, 1, 'endToEndLoginWithValidCredentials')
-data.setCell(0, 2, 'tests.LoginPageTest')
-data.setCell(0, 3, 307);
+data.setCell(0, 1, 'testIFrame2Content')
+data.setCell(0, 2, 'tests.IFrameTest')
+data.setCell(0, 3, 56);
 window.suiteTableData['Default_suite']= { tableData: data, tableDiv: 'times-div-Default_suite'}
 return data;
 }
               </script>
-              <span class="suite-total-time">Total running time: 307 ms</span>
+              <span class="suite-total-time">Total running time: 56 ms</span>
               <div id="times-div-Default_suite">
               </div> <!-- times-div-Default_suite -->
             </div> <!-- times-div -->
@@ -217,13 +217,13 @@ return data;
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
             <div class="ignored-class-div">
-              <span class="ignored-class-name">tests.LoginPageTest</span>
+              <span class="ignored-class-name">tests.IFrameTest</span>
               <div class="ignored-methods-div">
-                <span class="ignored-method-name">loginWithInvalidCredentials</span>
+                <span class="ignored-method-name">testSwitchBetweenIFrames</span>
                 <br/>
-                <span class="ignored-method-name">loginWithValidCredentials</span>
+                <span class="ignored-method-name">testIFrame1Content</span>
                 <br/>
-                <span class="ignored-method-name">validatePageTitle</span>
+                <span class="ignored-method-name">testVerifyIFrameContentPresence</span>
                 <br/>
               </div> <!-- ignored-methods-div -->
             </div> <!-- ignored-class-div -->
@@ -235,34 +235,38 @@ return data;
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
             <div class="chronological-class">
-              <div class="chronological-class-name">tests.LoginPageTest</div> <!-- chronological-class-name -->
+              <div class="chronological-class-name">tests.IFrameTest</div> <!-- chronological-class-name -->
               <div class="configuration-suite before">
                 <span class="method-name">setupExtentReport</span>
                 <span class="method-start">0 ms</span>
               </div> <!-- configuration-suite before -->
               <div class="configuration-class before">
+                <span class="method-name">setUpClass</span>
+                <span class="method-start">101 ms</span>
+              </div> <!-- configuration-class before -->
+              <div class="configuration-class before">
                 <span class="method-name">initExtentForClass</span>
-                <span class="method-start">127 ms</span>
+                <span class="method-start">101 ms</span>
               </div> <!-- configuration-class before -->
               <div class="configuration-method before">
-                <span class="method-name">setUp</span>
-                <span class="method-start">130 ms</span>
+                <span class="method-name">navigateToIFrameMenu</span>
+                <span class="method-start">1433 ms</span>
               </div> <!-- configuration-method before -->
               <div class="test-method">
-                <span class="method-name">endToEndLoginWithValidCredentials</span>
-                <span class="method-start">2038 ms</span>
+                <span class="method-name">testIFrame2Content</span>
+                <span class="method-start">1471 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-method after">
-                <span class="method-name">closeBrowser</span>
-                <span class="method-start">2346 ms</span>
-              </div> <!-- configuration-method after -->
-              <div class="configuration-method after">
-                <span class="method-name">handleTestResult([TestResult name=endToEndLoginWithValidCredentials status=SUCCESS method=LoginPageTest.endToEndLogin...)</span>
-                <span class="method-start">2461 ms</span>
+                <span class="method-name">handleTestResult([TestResult name=testIFrame2Content status=SUCCESS method=IFrameTest.testIFrame2Content()[pri:2, ins...)</span>
+                <span class="method-start">1528 ms</span>
               </div> <!-- configuration-method after -->
               <div class="configuration-class after">
+                <span class="method-name">tearDownClass</span>
+                <span class="method-start">1529 ms</span>
+              </div> <!-- configuration-class after -->
+              <div class="configuration-class after">
                 <span class="method-name">tearDownAllDrivers</span>
-                <span class="method-start">2462 ms</span>
+                <span class="method-start">1640 ms</span>
               </div> <!-- configuration-class after -->
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->

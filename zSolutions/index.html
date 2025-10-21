@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>zSolution</title>
+  <link rel="stylesheet" href="css/main.css" />
+</head>
+
+<body>
+  <script>
+    if (!localStorage.getItem("loggedIn")) {
+      window.location.href = "login.html";
+    }
+  </script>
+
+  <div class="sidebar">
+    <h2>zSolution</h2>
+    <p id="username-display"></p>
+    <button onclick="showTab('text-box')">Text Box</button>
+    <button onclick="showTab('radio-button')">Radio Button</button>
+    <button onclick="showTab('checkbox')">Check Box</button>
+    <button onclick="showTab('dropdown')">Drop Down</button>
+    <button onclick="showTab('alerts-popups')">Alerts & Popups</button>
+    <button onclick="showTab('broken-links')">Broken Links</button>
+    <button onclick="showTab('iframe')">iFrame</button>
+    <button onclick="showTab('web-table')">Web Table</button>
+    <button onclick="logout()">Logout</button>
+  </div>
+
+  <div class="content">
+    <!-- User Info -->
+    <div id="user-info">
+      <h3>Welcome, <span id="display-username"></span>!</h3>
+      <p><strong>Email:</strong> <span id="display-useremail"></span></p>
+      <p><strong>Role:</strong> <span id="display-userrole"></span></p>
+    </div>
+
+    <!-- Text Box -->
+    <div id="text-box" class="tab-content">
+      <h3>Text Box</h3>
+      <div class="form-section">
+        <label for="name">Name:</label>
+        <input type="text" id="name" placeholder="Enter your name" title="Enter your full name" />
+
+        <label for="email">Email:</label>
+        <input type="email" id="email" placeholder="Enter your email" title="Enter your email address" />
+
+        <label for="address">Address:</label>
+        <textarea id="address" rows="3" placeholder="Enter your address" title="Enter your address"></textarea>
+
+        <button onclick="showResult()">Submit</button>
+      </div>
+      <div id="result">
+        <h4>Submitted Details:</h4>
+        <p><strong>Name:</strong> <span id="result-name"></span></p>
+        <p><strong>Email:</strong> <span id="result-email"></span></p>
+        <p><strong>Address:</strong> <span id="result-address"></span></p>
+      </div>
+    </div>
+
+    <!-- Radio Buttons -->
+    <div id="radio-button" class="tab-content">
+      <h3>Radio Button</h3>
+      <div class="form-section">
+        <fieldset>
+          <legend>Gender:</legend>
+          <label>
+            <input type="radio" name="gender" value="Male" title="Select Male" /> Male
+          </label>
+          <label>
+            <input type="radio" name="gender" value="Female" title="Select Female" /> Female
+          </label>
+          <label>
+            <input type="radio" name="gender" value="Other" title="Select Other" /> Other
+          </label>
+        </fieldset>
+
+        <fieldset>
+          <legend>Age Group:</legend>
+          <label>
+            <input type="radio" name="age" value="18-25" title="Select Age 18-25" /> 18–25
+          </label>
+          <label>
+            <input type="radio" name="age" value="26-35" title="Select Age 26-35" /> 26–35
+          </label>
+          <label>
+            <input type="radio" name="age" value="36+" title="Select Age 36+" /> 36+
+          </label>
+        </fieldset>
+
+        <button onclick="submitRadio()">Submit</button>
+      </div>
+      <div id="radio-result">
+        <p><strong>Gender:</strong> <span id="selected-gender"></span></p>
+        <p><strong>Age Group:</strong> <span id="selected-age"></span></p>
+      </div>
+    </div>
+
+    <!-- Checkboxes -->
+    <div id="checkbox" class="tab-content">
+      <h3>Check Box</h3>
+      <div class="form-section">
+        <fieldset>
+          <legend>Hobbies:</legend>
+          <label>
+            <input type="checkbox" name="hobby" value="Reading" title="Select Reading" /> Reading
+          </label>
+          <label>
+            <input type="checkbox" name="hobby" value="Traveling" title="Select Traveling" /> Traveling
+          </label>
+          <label>
+            <input type="checkbox" name="hobby" value="Gaming" title="Select Gaming" /> Gaming
+          </label>
+          <label>
+            <input type="checkbox" name="hobby" value="Cooking" title="Select Cooking" /> Cooking
+          </label>
+        </fieldset>
+
+        <fieldset>
+          <legend>Subscribe to:</legend>
+          <label>
+            <input type="checkbox" name="subscribe" value="Newsletter" title="Select Newsletter" /> Newsletter
+          </label>
+          <label>
+            <input type="checkbox" name="subscribe" value="Promotions" title="Select Promotions" /> Promotions
+          </label>
+        </fieldset>
+
+        <button onclick="submitCheckbox()">Submit</button>
+      </div>
+      <div id="checkbox-result">
+        <p><strong>Hobby:</strong> <span id="selected-hobby"></span></p>
+        <p><strong>Subscription:</strong> <span id="selected-subscribe"></span></p>
+      </div>
+    </div>
+
+    <!-- Dropdown -->
+    <div id="dropdown" class="tab-content">
+      <h3>Drop Down</h3>
+      <div class="form-section">
+        <label for="country">Country:</label>
+        <select id="country" title="Select your country">
+          <option value="">--Choose--</option>
+          <option>USA</option>
+          <option>India</option>
+          <option>UK</option>
+          <option>Canada</option>
+          <option>Germany</option>
+        </select>
+
+        <label for="city">City:</label>
+        <select id="city" title="Select your city">
+          <option value="">--Choose--</option>
+          <option>New York</option>
+          <option>London</option>
+          <option>Mumbai</option>
+          <option>Toronto</option>
+          <option>Berlin</option>
+        </select>
+
+        <button onclick="submitDropdown()">Submit</button>
+      </div>
+      <div id="dropdown-result">
+        <p><strong>Country:</strong> <span id="selected-country"></span></p>
+        <p><strong>City:</strong> <span id="selected-city"></span></p>
+      </div>
+    </div>
+
+    <!-- Alerts & Popups -->
+    <div id="alerts-popups" class="tab-content">
+      <h3>Alerts & Popups</h3>
+      <button onclick="alert('This is a simple alert!')">Show Alert</button>
+      <button onclick="confirm('Are you sure you want to proceed?')">Show Confirmation</button>
+      <button onclick="let name = prompt('Enter your name:'); if(name) alert('Hello, ' + name)">Prompt</button>
+    </div>
+
+    <!-- Broken Links -->
+    <div id="broken-links" class="tab-content">
+      <h3>Broken Links</h3>
+      <div class="form-section">
+        <button onclick="checkBrokenLink('/page-not-exist-404.html')">Test Broken Link (404)</button><br><br>
+        <button onclick="checkBrokenLink('/bad-request-400')">Test Broken Link (400)</button>
+      </div>
+      <div id="broken-link-result" class="broken-result"></div>
+    </div>
+
+    <!-- iFrame -->
+    <div id="iframe" class="tab-content">
+      <h3>iFrame</h3>
+      <p>This section demonstrates multiple iFrames for testing automation interactions.</p>
+
+      <iframe id="frame1" srcdoc="
+        <h2 style='color:#1abc9c;'>Frame 1: Welcome to zSolution</h2>
+        <p>This is the first embedded frame for automation testing.</p>
+      " title="Frame 1 - Welcome"></iframe>
+
+      <iframe id="frame2" srcdoc="
+        <h2 style='color:#2c3e50;'>Frame 2: Nested Frame</h2>
+        <p>This frame can be used to test switching between iFrames.</p>
+      " title="Frame 2 - Nested Frame"></iframe>
+    </div>
+
+    <!-- Web Table -->
+    <div id="web-table" class="tab-content">
+      <h3>Web Table</h3>
+      <div class="form-section form-card">
+        <h4>Add New Record</h4>
+        <p>Fill in the details below and click "Add Record".</p>
+        <div class="form-row">
+          <input type="text" id="newName" placeholder="Name" title="Enter Name" />
+          <input type="text" id="newRole" placeholder="Role" title="Enter Role" />
+          <input type="text" id="newLocation" placeholder="Location" title="Enter Location" />
+          <button onclick="addNewRecord()">Add Record</button>
+        </div>
+      </div>
+
+      <table id="employeeTable">
+        <thead>
+          <tr>
+            <th>#</th>
+            <th>Name</th>
+            <th>Role</th>
+            <th>Location</th>
+            <th>Action</th>
+          </tr>
+        </thead>
+        <tbody id="tableBody"></tbody>
+      </table>
+
+      <div id="table-message" class="table-message"></div>
+    </div>
+  </div>
+
+  <script src="js/main.js"></script>
+  <script src="js/webtable.js"></script>
+</body>
+</html>
