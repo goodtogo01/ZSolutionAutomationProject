@@ -3,17 +3,20 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="tests.LoginPageTest">
+      <class name="tests.AlertsAndPopupTest">
         <methods>
-          <include name="endToEndLoginWithValidCredentials"/>
           <include name="initExtentForClass"/>
+          <include name="tearDownClass"/>
+          <include name="basicAlertHandling"/>
+          <include name="setUpClass"/>
+          <include name="promptAlertHandling"/>
+          <include name="confirmationAlertHandling"/>
           <include name="tearDownAllDrivers"/>
-          <include name="setUp"/>
+          <include name="navigateToAlertMenu"/>
           <include name="setupExtentReport"/>
           <include name="handleTestResult"/>
-          <include name="closeBrowser"/>
         </methods>
-      </class> <!-- tests.LoginPageTest -->
+      </class> <!-- tests.AlertsAndPopupTest -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

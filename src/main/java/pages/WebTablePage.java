@@ -7,6 +7,7 @@ import java.util.NoSuchElementException;
 import java.util.stream.Collectors;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -15,147 +16,170 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class WebTablePage {
-	private WebDriver driver;
-	private WebDriverWait wait; // ✅ Global wait instance
 
-	@FindBy(xpath = "/html/body/div[1]/button[8]")
-	WebElement tableMenu;
+    private WebDriver driver;
+    private WebDriverWait wait;
 
-	@FindBy(css = "#employeeTable tbody tr")
-	List<WebElement> tableRows;
+    @FindBy(xpath = "//div[@class='sidebar']//button[text()='Web Table']")
+    private WebElement tableMenu;
 
-	@FindBy(id = "newName")
-	WebElement inputNewName;
+    @FindBy(css = "#employeeTable tbody tr")
+    private List<WebElement> tableRows;
 
-	@FindBy(id = "newRole")
-	WebElement inputNewRole;
+    @FindBy(id = "newName")
+    private WebElement inputNewName;
 
-	@FindBy(id = "newLocation")
-	WebElement inputNewLocation;
+    @FindBy(id = "newRole")
+    private WebElement inputNewRole;
 
-	@FindBy(xpath = "//button[contains(text(), 'Add Record')]")
-	WebElement btnAddRecord;
+    @FindBy(id = "newLocation")
+    private WebElement inputNewLocation;
 
-	@FindBy(id = "table-message")
-	WebElement messageDiv;
+    @FindBy(xpath = "//button[contains(text(), 'Add Record')]")
+    private WebElement btnAddRecord;
 
-	public WebTablePage(WebDriver driver) {
-		this.driver = driver;
-		this.wait = new WebDriverWait(driver, Duration.ofSeconds(10)); // ✅ initialize once
-		PageFactory.initElements(driver, this);
-	}
+    @FindBy(id = "table-message")
+    private WebElement messageDiv;
 
-	public void clickOnTableMenu() {
-		tableMenu.click();
-	}
+    public WebTablePage(WebDriver driver) {
+        this.driver = driver;
+        this.wait = new WebDriverWait(driver, Duration.ofSeconds(15)); // increased timeout
+        PageFactory.initElements(driver, this);
+    }
 
-	// ===== Existing methods =====
-	public int getRowCount() {
-		return tableRows.size();
-	}
+    // ----------------- Helpers -----------------
+    private void scrollToElement(WebElement element) {
+        ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", element);
+    }
 
-	public List<List<String>> getTableData() {
-		List<List<String>> tableData = new ArrayList<>();
-		for (WebElement row : tableRows) {
-			List<WebElement> cells = row.findElements(By.tagName("td"));
-			List<String> rowData = new ArrayList<>();
-			for (WebElement cell : cells) {
-				rowData.add(cell.getText().trim());
-			}
-			tableData.add(rowData);
-		}
-		return tableData;
-	}
+    private void ensureWebTableTabActive() {
+        try {
+            if (!inputNewName.isDisplayed()) {
+                tableMenu.click();
+                wait.until(ExpectedConditions.visibilityOf(inputNewName));
+            }
+        } catch (Exception e) {
+            tableMenu.click();
+            wait.until(ExpectedConditions.visibilityOf(inputNewName));
+        }
+    }
 
-	public boolean isRecordPresent(String name, String role, String location) {
-		wait.until(ExpectedConditions.presenceOfAllElementsLocatedBy(By.cssSelector("#tableBody tr")));
-		List<WebElement> rows = driver.findElements(By.cssSelector("#tableBody tr"));
+    // ----------------- Actions -----------------
+    public void clickOnTableMenu() {
+        scrollToElement(tableMenu);
+        wait.until(ExpectedConditions.elementToBeClickable(tableMenu)).click();
+    }
 
-		for (WebElement row : rows) {
-			List<WebElement> cells = row.findElements(By.tagName("td"));
-			if (cells.size() >= 4 && cells.get(1).getText().equalsIgnoreCase(name)
-					&& cells.get(2).getText().equalsIgnoreCase(role)
-					&& cells.get(3).getText().equalsIgnoreCase(location)) {
-				return true;
-			}
-		}
-		return false;
-	}
+    public int getRowCount() {
+        return tableRows.size();
+    }
 
-	public List<String> getNamesByLocation(String targetLocation) {
-		final int NAME_IDX = 1;
-		final int LOCATION_IDX = 3;
-		String locTarget = targetLocation.trim().toLowerCase();
+    public List<List<String>> getTableData() {
+        List<List<String>> tableData = new ArrayList<>();
+        for (WebElement row : tableRows) {
+            List<WebElement> cells = row.findElements(By.tagName("td"));
+            List<String> rowData = new ArrayList<>();
+            for (WebElement cell : cells) {
+                rowData.add(cell.getText().trim());
+            }
+            tableData.add(rowData);
+        }
+        return tableData;
+    }
 
-		return tableRows.stream().map(r -> r.findElements(By.tagName("td")))
-				.filter(cells -> cells.size() > LOCATION_IDX)
-				.filter(cells -> cells.get(LOCATION_IDX).getText().trim().equalsIgnoreCase(locTarget))
-				.map(cells -> cells.get(NAME_IDX).getText().trim()).collect(Collectors.toList());
-	}
+    public boolean isRecordPresent(String name, String role, String location) {
+        wait.until(ExpectedConditions.presenceOfAllElementsLocatedBy(By.cssSelector("#tableBody tr")));
+        List<WebElement> rows = driver.findElements(By.cssSelector("#tableBody tr"));
 
-	public boolean isRolePresent(String roleToCheck) {
-		String roleLc = roleToCheck.trim().toLowerCase();
-		for (WebElement row : tableRows) {
-			List<WebElement> cells = row.findElements(By.tagName("td"));
-			if (cells.size() >= 5 && cells.get(2).getText().trim().toLowerCase().equals(roleLc)) {
-				return true;
-			}
-		}
-		return false;
-	}
+        for (WebElement row : rows) {
+            List<WebElement> cells = row.findElements(By.tagName("td"));
+            if (cells.size() >= 4 && cells.get(1).getText().equalsIgnoreCase(name)
+                    && cells.get(2).getText().equalsIgnoreCase(role)
+                    && cells.get(3).getText().equalsIgnoreCase(location)) {
+                return true;
+            }
+        }
+        return false;
+    }
 
-	// ===== Add New Record =====
-	public String addNewRecord(String name, String role, String location) {
-		inputNewName.clear();
-		inputNewName.sendKeys(name);
+    public List<String> getNamesByLocation(String targetLocation) {
+        final int NAME_IDX = 1;
+        final int LOCATION_IDX = 3;
+        String locTarget = targetLocation.trim().toLowerCase();
 
-		inputNewRole.clear();
-		inputNewRole.sendKeys(role);
+        return tableRows.stream().map(r -> r.findElements(By.tagName("td")))
+                .filter(cells -> cells.size() > LOCATION_IDX)
+                .filter(cells -> cells.get(LOCATION_IDX).getText().trim().equalsIgnoreCase(locTarget))
+                .map(cells -> cells.get(NAME_IDX).getText().trim())
+                .collect(Collectors.toList());
+    }
 
-		inputNewLocation.clear();
-		inputNewLocation.sendKeys(location);
+    public boolean isRolePresent(String roleToCheck) {
+        String roleLc = roleToCheck.trim().toLowerCase();
+        for (WebElement row : tableRows) {
+            List<WebElement> cells = row.findElements(By.tagName("td"));
+            if (cells.size() >= 5 && cells.get(2).getText().trim().toLowerCase().equals(roleLc)) {
+                return true;
+            }
+        }
+        return false;
+    }
 
-		btnAddRecord.click();
+    // ----------------- Add Record -----------------
+    public String addNewRecord(String name, String role, String location) {
+        ensureWebTableTabActive();
 
-		wait.until(ExpectedConditions.visibilityOf(messageDiv));
-		return messageDiv.getText().trim();
-	}
+        scrollToElement(inputNewName);
+        wait.until(ExpectedConditions.elementToBeClickable(inputNewName)).clear();
+        inputNewName.sendKeys(name);
 
-	// ===== Delete Record =====
-	public String deleteRecordByName(String name) {
-		try {
-			List<WebElement> rows = driver.findElements(By.cssSelector("#tableBody tr"));
-			for (WebElement row : rows) {
-				List<WebElement> cells = row.findElements(By.tagName("td"));
-				if (cells.size() > 0 && cells.get(1).getText().equalsIgnoreCase(name)) {
-					WebElement deleteButton = row.findElement(By.xpath("./td[5]/button"));
-					wait.until(ExpectedConditions.elementToBeClickable(deleteButton)).click();
+        scrollToElement(inputNewRole);
+        wait.until(ExpectedConditions.elementToBeClickable(inputNewRole)).clear();
+        inputNewRole.sendKeys(role);
 
-					// ✅ Wait for success message to appear
-					WebElement message = wait
-							.until(ExpectedConditions.visibilityOfElementLocated(By.id("table-message")));
-					String msgText = message.getText();
-					System.out.println("✅ Deletion message displayed: " + msgText);
+        scrollToElement(inputNewLocation);
+        wait.until(ExpectedConditions.elementToBeClickable(inputNewLocation)).clear();
+        inputNewLocation.sendKeys(location);
 
-					// ✅ Wait until record disappears from DOM (use a fresh locator, not the old row
-					// object)
-					wait.until(ExpectedConditions
-							.invisibilityOfElementLocated(By.xpath("//td[text()='" + name + "']/parent::tr")));
+        scrollToElement(btnAddRecord);
+        wait.until(ExpectedConditions.elementToBeClickable(btnAddRecord)).click();
 
-					return msgText;
-				}
-			}
-		} catch (Exception e) {
-			System.out.println("⚠️ Error deleting record: " + e.getMessage());
-		}
-		return null;
-	}
+        wait.until(ExpectedConditions.visibilityOf(messageDiv));
+        return messageDiv.getText().trim();
+    }
 
-	public String getInlineMessage() {
-		try {
-			return messageDiv.getText().trim();
-		} catch (NoSuchElementException e) {
-			return "";
-		}
-	}
+    // ----------------- Delete Record -----------------
+    public String deleteRecordByName(String name) {
+        try {
+            List<WebElement> rows = driver.findElements(By.cssSelector("#tableBody tr"));
+            for (WebElement row : rows) {
+                List<WebElement> cells = row.findElements(By.tagName("td"));
+                if (cells.size() > 0 && cells.get(1).getText().equalsIgnoreCase(name)) {
+                    WebElement deleteButton = row.findElement(By.xpath("./td[5]/button"));
+                    scrollToElement(deleteButton);
+                    wait.until(ExpectedConditions.elementToBeClickable(deleteButton)).click();
+
+                    WebElement message = wait.until(ExpectedConditions.visibilityOf(messageDiv));
+                    String msgText = message.getText();
+                    System.out.println("✅ Deletion message: " + msgText);
+
+                    wait.until(ExpectedConditions
+                            .invisibilityOfElementLocated(By.xpath("//td[text()='" + name + "']/parent::tr")));
+
+                    return msgText;
+                }
+            }
+        } catch (Exception e) {
+            System.out.println("⚠️ Error deleting record: " + e.getMessage());
+        }
+        return null;
+    }
+
+    public String getInlineMessage() {
+        try {
+            return messageDiv.getText().trim();
+        } catch (NoSuchElementException e) {
+            return "";
+        }
+    }
 }

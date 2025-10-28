@@ -23,35 +23,34 @@ public class IFrameTest extends BaseTest {
 	private IFramePage iframePage;
 	private LoginPage loginPage;
 
-	// ✅ Login once before all IFrame tests
 	@BeforeClass(alwaysRun = true)
 	public void setUpClass() throws MalformedURLException {
-		driver = initialization(); // ✅ from BaseTest
+		driver = initialization(); // from BaseTest
 		seleniumUtils = new SeleniumUtils(driver);
 		iframePage = new IFramePage(driver);
 		dropdownPage = new DropdownPage(driver);
 		loginPage = new LoginPage(driver);
 
-		// ✅ Navigate to login page
-		driver.get(BaseTest.prop.getProperty("url"));
-
-		// ✅ Perform login
+		// Navigate to login page
+		getDriver().get(BaseTest.prop.getProperty("url")); // Using getDriver() now
+		
+		// Perform login
 		loginPage.setUserName(BaseTest.prop.getProperty("userName"));
 		loginPage.setPassword(BaseTest.prop.getProperty("password"));
 		loginPage.clickOnLoginButton();
 
-		// ✅ Validate login
+		// Validate login
 		String expectedHomeTitle = BaseTest.prop.getProperty("homePageTitle");
-		String actualTitle = driver.getTitle();
+		String actualTitle = getDriver().getTitle();
 		Assert.assertEquals(actualTitle, expectedHomeTitle, "❌ Login failed or page title mismatch!");
 		System.out.println("✅ Successfully logged in. Current Page Title: " + actualTitle);
 	}
 
-	// ✅ Navigate to IFrame menu before each test
+	// Navigate to IFrame menu before each test
 	@BeforeMethod(alwaysRun = true)
 	public void navigateToIFrameMenu() {
 		iframePage.navigateToIFrameMenu();
-		test = extent.createTest("Navigate to IFrame Menu");
+		test = getExtent().createTest("Navigate to IFrame Menu");
 		test.pass("✅ Navigated to IFrame section successfully.");
 	}
 
@@ -59,7 +58,7 @@ public class IFrameTest extends BaseTest {
 
 	@Test(priority = 1)
 	public void testIFrame1Content() {
-		test = extent.createTest("Test iFrame1 Content");
+		test = getExtent().createTest("Test iFrame1 Content");
 
 		Assert.assertTrue(iframePage.isIFramePresent("frame1"), "❌ frame1 is not present!");
 		iframePage.switchToIFrame("frame1");
@@ -74,7 +73,7 @@ public class IFrameTest extends BaseTest {
 
 	@Test(priority = 2)
 	public void testIFrame2Content() {
-		test = extent.createTest("Test iFrame2 Content");
+		test = getExtent().createTest("Test iFrame2 Content");
 
 		Assert.assertTrue(iframePage.isIFramePresent("frame2"), "❌ frame2 is not present!");
 		iframePage.switchToIFrame("frame2");
@@ -89,7 +88,7 @@ public class IFrameTest extends BaseTest {
 
 	@Test(priority = 3)
 	public void testSwitchBetweenIFrames() throws InterruptedException {
-		test = extent.createTest("Test Switch Between iFrames");
+		test = getExtent().createTest("Test Switch Between iFrames");
 
 		// Switch to frame1
 		Assert.assertTrue(iframePage.isIFramePresent("frame1"), "❌ frame1 is not present!");
@@ -108,7 +107,7 @@ public class IFrameTest extends BaseTest {
 
 	@Test(priority = 4)
 	public void testVerifyIFrameContentPresence() {
-		test = extent.createTest("Verify iFrame Content Presence");
+		test = getExtent().createTest("Verify iFrame Content Presence");
 
 		// Verify frame1 content
 		iframePage.switchToIFrame("frame1");
@@ -125,13 +124,10 @@ public class IFrameTest extends BaseTest {
 		test.pass("✅ iFrame paragraph contents verified successfully.");
 	}
 
-	// ✅ Close browser after all tests
+	// Close browser after all tests
 	@AfterClass(alwaysRun = true)
 	public void tearDownClass() {
-		if (driver != null) {
-			driver.quit();
-			driver = null;
-			System.out.println("✅ Browser closed after IFrame tests.");
-		}
+		// The driver is now closed by BaseTest's tearDownAllDrivers()
+		System.out.println("✅ IFrameTest class finished.");
 	}
 }

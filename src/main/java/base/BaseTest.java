@@ -161,18 +161,18 @@ public class BaseTest {
 	}
 
 	// ------------------ TEARDOWN DRIVER ------------------
-	// Closes all drivers after the entire <test> in TestNG finishes
 	@AfterClass(alwaysRun = true)
 	public void tearDownAllDrivers() {
-		try {
-			WebDriver currentDriver = driver.get(); // ✅ get actual WebDriver from ThreadLocal
-			if (currentDriver != null) {
-				currentDriver.quit(); // ✅ closes browser correctly
-				// driver.remove(); // ✅ clears ThreadLocal reference
+		WebDriver currentDriver = driver.get(); 
+		if (currentDriver != null) {
+			try {
+				currentDriver.quit(); // ✅ closes browser
 				System.out.println("✅ All browsers closed after tests.");
+			} catch (Exception e) {
+				System.out.println("⚠️ Warning: Error during driver quit. " + e.getMessage());
+			} finally {
+				driver.remove(); // ✅ essential for ThreadLocal cleanup
 			}
-		} catch (Exception e) {
-			System.out.println("⚠️ Warning: Driver already closed or session ended. " + e.getMessage());
 		}
 	}
 

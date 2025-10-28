@@ -15,8 +15,12 @@ public class IFramePage {
 	private WebDriverWait wait;
 
 	// Sidebar iFrame menu button
-	@FindBy(xpath = "/html/body/div[1]/button[7]")
+	// ✅ FIX: Use a stable locator based on the button's text
+	@FindBy(xpath = "//button[text()='iFrame']") 
 	private WebElement iFrameMenu;
+
+	// Locator for the main iFrame container (id="iframe")
+	private By iframeContainerLocator = By.id("iframe");
 
 	// iFrames on the page
 	private By frame1Locator = By.id("frame1");
@@ -24,13 +28,17 @@ public class IFramePage {
 
 	public IFramePage(WebDriver driver) {
 		this.driver = driver;
-		this.wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+		// Use driver from current thread
+		this.wait = new WebDriverWait(driver, Duration.ofSeconds(10)); 
 		PageFactory.initElements(driver, this);
 	}
 
 	// Navigate to the iframe menu
 	public void navigateToIFrameMenu() {
-		iFrameMenu.click();
+		// Wait for the button to be clickable before clicking
+		wait.until(ExpectedConditions.elementToBeClickable(iFrameMenu)).click();
+		// Wait for the content panel to become visible after the click
+		wait.until(ExpectedConditions.visibilityOfElementLocated(iframeContainerLocator));
 	}
 
 	// Check if iframe is present

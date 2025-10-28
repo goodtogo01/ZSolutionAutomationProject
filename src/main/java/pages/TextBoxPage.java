@@ -16,7 +16,7 @@ public class TextBoxPage {
 	private By nameField = By.id("name");
 	private By emailField = By.id("email");
 	private By addressField = By.id("address");
-	private By submitButton = By.xpath("//*[@id='text-box']/div[1]/button");
+	private By submitButton = By.xpath("//*[@id='text-box']/div[1]/p/button");
 
 	// Results
 	private By resultName = By.id("result-name");

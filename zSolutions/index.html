@@ -1,10 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>zSolution</title>
-  <link rel="stylesheet" href="css/main.css" />
+  <link rel="stylesheet" href="style.css" />
 </head>
 
 <body>
@@ -21,6 +22,7 @@
     <button onclick="showTab('radio-button')">Radio Button</button>
     <button onclick="showTab('checkbox')">Check Box</button>
     <button onclick="showTab('dropdown')">Drop Down</button>
+    <button onclick="showTab('drag-drop')">Drag & Drop</button>
     <button onclick="showTab('alerts-popups')">Alerts & Popups</button>
     <button onclick="showTab('broken-links')">Broken Links</button>
     <button onclick="showTab('iframe')">iFrame</button>
@@ -29,14 +31,13 @@
   </div>
 
   <div class="content">
-    <!-- User Info -->
+
     <div id="user-info">
       <h3>Welcome, <span id="display-username"></span>!</h3>
       <p><strong>Email:</strong> <span id="display-useremail"></span></p>
       <p><strong>Role:</strong> <span id="display-userrole"></span></p>
     </div>
 
-    <!-- Text Box -->
     <div id="text-box" class="tab-content">
       <h3>Text Box</h3>
       <div class="form-section">
@@ -48,8 +49,9 @@
 
         <label for="address">Address:</label>
         <textarea id="address" rows="3" placeholder="Enter your address" title="Enter your address"></textarea>
-
-        <button onclick="showResult()">Submit</button>
+        <p>
+          <button onclick="showResult()">Submit</button>
+        </p>
       </div>
       <div id="result">
         <h4>Submitted Details:</h4>
@@ -59,83 +61,61 @@
       </div>
     </div>
 
-    <!-- Radio Buttons -->
     <div id="radio-button" class="tab-content">
       <h3>Radio Button</h3>
       <div class="form-section">
         <fieldset>
           <legend>Gender:</legend>
-          <label>
-            <input type="radio" name="gender" value="Male" title="Select Male" /> Male
-          </label>
-          <label>
-            <input type="radio" name="gender" value="Female" title="Select Female" /> Female
-          </label>
-          <label>
-            <input type="radio" name="gender" value="Other" title="Select Other" /> Other
-          </label>
+          <label><input type="radio" name="gender" value="Male" title="Select Male" /> Male</label>
+          <label><input type="radio" name="gender" value="Female" title="Select Female" /> Female</label>
+          <label><input type="radio" name="gender" value="Other" title="Select Other" /> Other</label>
         </fieldset>
+        <p>
+
 
         <fieldset>
           <legend>Age Group:</legend>
-          <label>
-            <input type="radio" name="age" value="18-25" title="Select Age 18-25" /> 18–25
-          </label>
-          <label>
-            <input type="radio" name="age" value="26-35" title="Select Age 26-35" /> 26–35
-          </label>
-          <label>
-            <input type="radio" name="age" value="36+" title="Select Age 36+" /> 36+
-          </label>
+          <label><input type="radio" name="age" value="18-25" title="Select Age 18-25" /> 18–25</label>
+          <label><input type="radio" name="age" value="26-35" title="Select Age 26-35" /> 26–35</label>
+          <label><input type="radio" name="age" value="36+" title="Select Age 36+" /> 36+</label>
         </fieldset>
+        </p>
 
         <button onclick="submitRadio()">Submit</button>
       </div>
+
       <div id="radio-result">
         <p><strong>Gender:</strong> <span id="selected-gender"></span></p>
         <p><strong>Age Group:</strong> <span id="selected-age"></span></p>
       </div>
     </div>
 
-    <!-- Checkboxes -->
     <div id="checkbox" class="tab-content">
       <h3>Check Box</h3>
       <div class="form-section">
         <fieldset>
           <legend>Hobbies:</legend>
-          <label>
-            <input type="checkbox" name="hobby" value="Reading" title="Select Reading" /> Reading
-          </label>
-          <label>
-            <input type="checkbox" name="hobby" value="Traveling" title="Select Traveling" /> Traveling
-          </label>
-          <label>
-            <input type="checkbox" name="hobby" value="Gaming" title="Select Gaming" /> Gaming
-          </label>
-          <label>
-            <input type="checkbox" name="hobby" value="Cooking" title="Select Cooking" /> Cooking
-          </label>
+          <label><input type="checkbox" name="hobby" value="Reading" /> Reading</label>
+          <label><input type="checkbox" name="hobby" value="Traveling" /> Traveling</label>
+          <label><input type="checkbox" name="hobby" value="Gaming" /> Gaming</label>
+          <label><input type="checkbox" name="hobby" value="Cooking" /> Cooking</label>
         </fieldset>
-
+        <p>
         <fieldset>
           <legend>Subscribe to:</legend>
-          <label>
-            <input type="checkbox" name="subscribe" value="Newsletter" title="Select Newsletter" /> Newsletter
-          </label>
-          <label>
-            <input type="checkbox" name="subscribe" value="Promotions" title="Select Promotions" /> Promotions
-          </label>
+          <label><input type="checkbox" name="subscribe" value="Newsletter" /> Newsletter</label>
+          <label><input type="checkbox" name="subscribe" value="Promotions" /> Promotions</label>
         </fieldset>
-
+        </p>
         <button onclick="submitCheckbox()">Submit</button>
       </div>
+
       <div id="checkbox-result">
         <p><strong>Hobby:</strong> <span id="selected-hobby"></span></p>
         <p><strong>Subscription:</strong> <span id="selected-subscribe"></span></p>
       </div>
     </div>
 
-    <!-- Dropdown -->
     <div id="dropdown" class="tab-content">
       <h3>Drop Down</h3>
       <div class="form-section">
@@ -158,16 +138,39 @@
           <option>Toronto</option>
           <option>Berlin</option>
         </select>
+        <P>
+          <button onclick="submitDropdown()">Submit</button>
+        </P>
 
-        <button onclick="submitDropdown()">Submit</button>
       </div>
+
       <div id="dropdown-result">
         <p><strong>Country:</strong> <span id="selected-country"></span></p>
         <p><strong>City:</strong> <span id="selected-city"></span></p>
       </div>
     </div>
 
-    <!-- Alerts & Popups -->
+    <div id="drag-drop" class="tab-content">
+      <h3>Drag & Drop</h3>
+      <p>Drag an item from the source area and drop it into the target box below.</p>
+
+      <div class="dragdrop-container">
+        <div class="drag-source" id="drag-source">
+          <div class="draggable" draggable="true">📦 Item 1</div>
+          <div class="draggable" draggable="true">📦 Item 2</div>
+          <div class="draggable" draggable="true">📦 Item 3</div>
+        </div>
+
+        <div class="drop-target" id="drop-target">
+          <p>Drop items here</p>
+        </div>
+      </div>
+
+      <div id="drop-result" class="drop-message" hidden>
+        <p>✅ Item successfully dropped!</p>
+      </div>
+    </div>
+
     <div id="alerts-popups" class="tab-content">
       <h3>Alerts & Popups</h3>
       <button onclick="alert('This is a simple alert!')">Show Alert</button>
@@ -175,7 +178,6 @@
       <button onclick="let name = prompt('Enter your name:'); if(name) alert('Hello, ' + name)">Prompt</button>
     </div>
 
-    <!-- Broken Links -->
     <div id="broken-links" class="tab-content">
       <h3>Broken Links</h3>
       <div class="form-section">
@@ -185,7 +187,6 @@
       <div id="broken-link-result" class="broken-result"></div>
     </div>
 
-    <!-- iFrame -->
     <div id="iframe" class="tab-content">
       <h3>iFrame</h3>
       <p>This section demonstrates multiple iFrames for testing automation interactions.</p>
@@ -201,7 +202,6 @@
       " title="Frame 2 - Nested Frame"></iframe>
     </div>
 
-    <!-- Web Table -->
     <div id="web-table" class="tab-content">
       <h3>Web Table</h3>
       <div class="form-section form-card">
@@ -232,7 +232,273 @@
     </div>
   </div>
 
-  <script src="js/main.js"></script>
-  <script src="js/webtable.js"></script>
+  <script>
+    // ====================================================================
+    // 🧩 COMBINED main.js — includes main app logic + webtable persistence
+    // ====================================================================
+
+    // -------------------------
+    // 🔐 USER INITIALIZATION
+    // -------------------------
+    window.onload = function () {
+      const storedUser = localStorage.getItem("user");
+      if (storedUser) {
+        const user = JSON.parse(storedUser);
+        document.getElementById("username-display").textContent = `Welcome, ${user.fullName}`;
+        document.getElementById("display-username").textContent = user.fullName;
+        document.getElementById("display-useremail").textContent = user.email || "Not available";
+        document.getElementById("display-userrole").textContent = user.role || "User";
+      } else {
+        window.location.href = "login.html";
+      }
+
+      // Initialize webtable and dragdrop
+      generateInitialRecords();
+      if (document.querySelector(".dragdrop-container")) {
+        initializeDragDrop();
+      }
+    };
+
+    // -------------------------
+    // 🚪 LOGOUT
+    // -------------------------
+    function logout() {
+      localStorage.clear();
+      window.location.href = "login.html";
+    }
+
+    // -------------------------
+    // 🧭 TAB NAVIGATION
+    // -------------------------
+    function showTab(tabId) {
+      document.querySelectorAll(".tab-content").forEach(tab => tab.classList.remove("active"));
+      document.getElementById(tabId).classList.add("active");
+    }
+
+    // -------------------------
+    // 📝 TEXTBOX SUBMISSION
+    // -------------------------
+    function showResult() {
+      document.getElementById("result-name").textContent = document.getElementById("name").value;
+      document.getElementById("result-email").textContent = document.getElementById("email").value;
+      document.getElementById("result-address").textContent = document.getElementById("address").value;
+      document.getElementById("result").style.display = "block";
+    }
+
+    // -------------------------
+    // 👤 RADIO BUTTONS
+    // -------------------------
+    function submitRadio() {
+      const gender = document.querySelector('input[name="gender"]:checked');
+      const age = document.querySelector('input[name="age"]:checked');
+      if (gender && age) {
+        document.getElementById("selected-gender").textContent = gender.value;
+        document.getElementById("selected-age").textContent = age.value;
+        document.getElementById("radio-result").style.display = "block";
+      } else {
+        alert("Please select both gender and age group.");
+      }
+    }
+
+    // -------------------------
+    // ✅ CHECKBOXES
+    // -------------------------
+    document.querySelectorAll('input[name="hobby"]').forEach(cb => {
+      cb.addEventListener("change", () => {
+        document.querySelectorAll('input[name="hobby"]').forEach(el => { if (el !== cb) el.checked = false; });
+      });
+    });
+
+    document.querySelectorAll('input[name="subscribe"]').forEach(cb => {
+      cb.addEventListener("change", () => {
+        document.querySelectorAll('input[name="subscribe"]').forEach(el => { if (el !== cb) el.checked = false; });
+      });
+    });
+
+    function submitCheckbox() {
+      const hobby = document.querySelector('input[name="hobby"]:checked');
+      const subscribe = document.querySelector('input[name="subscribe"]:checked');
+      document.getElementById("selected-hobby").textContent = hobby ? hobby.value : "None";
+      document.getElementById("selected-subscribe").textContent = subscribe ? subscribe.value : "None";
+      document.getElementById("checkbox-result").style.display = "block";
+    }
+
+    // -------------------------
+    // 🌎 DROPDOWN HANDLING
+    // -------------------------
+    function submitDropdown() {
+      const country = document.getElementById("country").value;
+      const city = document.getElementById("city").value;
+      if (country && city) {
+        document.getElementById("selected-country").textContent = country;
+        document.getElementById("selected-city").textContent = city;
+        document.getElementById("dropdown-result").style.display = "block";
+      } else {
+        alert("Please select both country and city.");
+      }
+    }
+
+    // -------------------------
+    // 🔗 BROKEN LINK CHECKER
+    // -------------------------
+    function checkBrokenLink(url) {
+      fetch(url)
+        .then(response => {
+          const resultDiv = document.getElementById("broken-link-result");
+          resultDiv.style.display = "block";
+          if (response.status >= 400 && response.status < 500) {
+            resultDiv.innerHTML = `🔴 Client Error: ${url} (status ${response.status})`;
+          } else if (response.status >= 500) {
+            resultDiv.innerHTML = `🔴 Server Error: ${url} (status ${response.status})`;
+          } else {
+            resultDiv.innerHTML = `✅ Success: ${url} (status ${response.status})`;
+          }
+        })
+        .catch(error => {
+          const resultDiv = document.getElementById("broken-link-result");
+          resultDiv.style.display = "block";
+          resultDiv.innerHTML = `❌ Fetch Failed: ${url}. <br><small>${error.message}</small>`;
+        });
+    }
+
+    // -------------------------
+    // 🧲 DRAG & DROP SECTION
+    // -------------------------
+    function initializeDragDrop() {
+      const draggables = document.querySelectorAll(".draggable");
+      const dropTarget = document.getElementById("drop-target");
+      const sourceContainer = document.getElementById("drag-source");
+      const dropMessage = document.getElementById("drop-result");
+
+      const totalItems = draggables.length;
+      let droppedCount = 0;
+
+      [dropTarget, sourceContainer].forEach(container => {
+        container.addEventListener("dragover", e => {
+          e.preventDefault();
+          container.classList.add("drag-over");
+        });
+        container.addEventListener("dragleave", () => {
+          container.classList.remove("drag-over");
+        });
+        container.addEventListener("drop", e => {
+          e.preventDefault();
+          container.classList.remove("drag-over");
+          const id = e.dataTransfer.getData("text/plain");
+          const draggedItem = document.getElementById(id);
+          if (!draggedItem) return;
+          const isReturning = container.id === "drag-source";
+          container.appendChild(draggedItem);
+          if (isReturning) {
+            droppedCount--;
+            showDropMessage(`↩️ ${draggedItem.textContent.trim()} returned (${droppedCount}/${totalItems})`);
+          } else {
+            droppedCount++;
+            showDropMessage(`✅ ${draggedItem.textContent.trim()} dropped (${droppedCount}/${totalItems})`);
+          }
+        });
+      });
+
+      draggables.forEach(item => {
+        if (!item.id) item.id = `drag-${Math.random().toString(36).substring(2, 8)}`;
+        item.addEventListener("dragstart", e => {
+          e.dataTransfer.setData("text/plain", item.id);
+          item.classList.add("dragging");
+        });
+        item.addEventListener("dragend", () => item.classList.remove("dragging"));
+      });
+
+      function showDropMessage(text) {
+        if (!dropMessage) return;
+        dropMessage.hidden = false;
+        dropMessage.innerHTML = text;
+      }
+    }
+
+    // ====================================================================
+    // 📊 WEBTABLE SECTION (merged from webtable.js)
+    // ====================================================================
+    const tableBody = document.getElementById("tableBody");
+    const msgBox = document.getElementById("table-message");
+    const STORAGE_KEY = "zsolutionRecords";
+    let records = JSON.parse(localStorage.getItem(STORAGE_KEY)) || [];
+
+    function saveRecords() {
+      localStorage.setItem(STORAGE_KEY, JSON.stringify(records));
+    }
+
+    function showMessage(msg, type = "success") {
+      msgBox.innerText = msg;
+      msgBox.style.display = "block";
+      msgBox.style.backgroundColor = type === "success" ? "#d1f0ea" : "#f8d7da";
+      msgBox.style.color = type === "success" ? "#155724" : "#721c24";
+      setTimeout(() => (msgBox.style.display = "none"), 3000);
+    }
+
+    function generateInitialRecords() {
+      if (records.length === 0) {
+        const initialData = [
+          { name: "John Doe", role: "Developer", location: "USA" },
+          { name: "Jane Smith", role: "Designer", location: "UK" },
+          { name: "Mike Johnson", role: "Manager", location: "Canada" },
+          { name: "Emily Davis", role: "QA", location: "India" },
+          { name: "Robert Brown", role: "Lead", location: "Germany" },
+          { name: "Linda Wilson", role: "Analyst", location: "Japan" },
+          { name: "James Taylor", role: "Support", location: "Australia" },
+          { name: "Patricia Miller", role: "Architect", location: "UAE" },
+          { name: "Michael Anderson", role: "Developer", location: "USA" },
+          { name: "Delbert Sanford", role: "Designer", location: "UAE" }
+        ];
+        initialData.forEach(item => records.push({ id: Date.now() + Math.random(), ...item }));
+        saveRecords();
+      }
+      renderTable();
+    }
+
+    function renderTable() {
+      if (!tableBody) return;
+      tableBody.innerHTML = "";
+      records.forEach((rec, index) => {
+        const row = document.createElement("tr");
+        row.innerHTML = `
+          <td>${index + 1}</td>
+          <td>${rec.name}</td>
+          <td>${rec.role}</td>
+          <td>${rec.location}</td>
+          <td><button onclick="deleteRecord(${rec.id})">Delete</button></td>
+        `;
+        tableBody.appendChild(row);
+      });
+    }
+
+    function addNewRecord() {
+      const name = document.getElementById("newName").value.trim();
+      const role = document.getElementById("newRole").value.trim();
+      const location = document.getElementById("newLocation").value.trim();
+
+      if (!name || !role || !location) {
+        showMessage("Please fill out all fields.", "error");
+        return;
+      }
+
+      records.push({ id: Date.now() + Math.random(), name, role, location });
+      saveRecords();
+      renderTable();
+      showMessage("New record added successfully!");
+
+      document.getElementById("newName").value = "";
+      document.getElementById("newRole").value = "";
+      document.getElementById("newLocation").value = "";
+    }
+
+    function deleteRecord(id) {
+      records = records.filter(rec => rec.id !== id);
+      saveRecords();
+      renderTable();
+      showMessage("Record deleted successfully!");
+    }
+  </script>
+
 </body>
+
 </html>

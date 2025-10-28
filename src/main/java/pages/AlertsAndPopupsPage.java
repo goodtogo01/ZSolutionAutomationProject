@@ -1,63 +1,67 @@
 package pages;
 
 import java.io.IOException;
+import java.time.Duration;
 
 import org.openqa.selenium.Alert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.NoAlertPresentException;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class AlertsAndPopupsPage {
 	private WebDriver driver;
-
-	private By alertButton = By.xpath("/html/body/div[1]/button[5]");
-	private By showAlert = By.xpath("//*[@id='alerts-popups']/button[1]");
-	private By showConfirmation = By.xpath("//*[@id='alerts-popups']/button[2]");
-	private By promptAlert = By.xpath("//*[@id='alerts-popups']/button[3]");
+	private WebDriverWait wait;
+	
+	// ✅ FIX 1: Main menu button locator is now more robust.
+	private By alertMainMenuButton = By.xpath("//div[@class='sidebar']/button[text()='Alerts & Popups']");
+	
+	// ✅ FIX 2: Alert buttons locators are now relative to the #alerts-popups div.
+	private By showAlert = By.xpath("//div[@id='alerts-popups']/button[1]");
+	private By showConfirmation = By.xpath("//div[@id='alerts-popups']/button[2]");
+	private By promptAlert = By.xpath("//div[@id='alerts-popups']/button[3]");
 
 	public AlertsAndPopupsPage(WebDriver driver) {
 		this.driver = driver;
+		this.wait = new WebDriverWait(driver, Duration.ofSeconds(10));
 	}
 
 	public void clickMainManue() {
-		driver.findElement(alertButton).click();
-
+		// ✅ Wait for the main menu button to be clickable before clicking
+		wait.until(ExpectedConditions.elementToBeClickable(alertMainMenuButton)).click();
+		// ✅ Optional: Wait for the alert section to be visible
+		wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("alerts-popups")));
 	}
 
-	// Click on each bttons
+	// Click on each buttons
 	public void clickToAlertButton() {
-		driver.findElement(showAlert).click();
-
+		// ✅ Wait for the button to be clickable
+		wait.until(ExpectedConditions.elementToBeClickable(showAlert)).click();
 	}
 
 	public void clickToShowConfirmationButton() {
-		driver.findElement(showConfirmation).click();
-
+		// ✅ Wait for the button to be clickable
+		wait.until(ExpectedConditions.elementToBeClickable(showConfirmation)).click();
 	}
 
 	public void clickToShowInputAlertButton() {
-		driver.findElement(promptAlert).click();
-
+		// ✅ Wait for the button to be clickable
+		wait.until(ExpectedConditions.elementToBeClickable(promptAlert)).click();
 	}
 
-	// prompt operation
-	public void acceptAlert() {
-		handleAlertAndGetText(true);
-	}
-
-	// prompt operation
-	public void dismisAlert() {
-		handleAlertAndGetText(false);
-	}
-
+	// ... (rest of the Alert handling methods remain the same) ...
+	
+	// Handle get alert Text
 	public String getAlertText() {
 		return handleAlertAndGetText(false);
 	}
 
-	// Handle get alert Text
+	// Handle alert, returns text
 	public String handleAlertAndGetText(boolean accept) {
 		try {
-			Alert alert = driver.switchTo().alert();
+			// ✅ Wait for the alert to be present before switching
+			Alert alert = wait.until(ExpectedConditions.alertIsPresent());
 			String alertText = alert.getText();
 			System.out.println("Alert Text captured as : " + alertText);
 
@@ -73,31 +77,13 @@ public class AlertsAndPopupsPage {
 		return null;
 	}
 
-	// Hangle Prompt alert
-	public void hanglePromptAlert(boolean accept) {
-		try {
-			Alert alert = driver.switchTo().alert();
-			String alertText = alert.getText();
-			System.out.println("Alert Text captured as : " + alertText);
-
-			if (accept) {
-				alert.accept();
-			} else {
-				alert.dismiss();
-			}
-
-		} catch (NoAlertPresentException e) {
-			System.out.println("No Alert is available");
-		}
-	}
-
 // Handle input alert
 	public void handleInputAlert(String TextToEnter, boolean accept) throws IOException {
 		try {
-			Alert alert = driver.switchTo().alert();
+			// ✅ Wait for the alert to be present before switching
+			Alert alert = wait.until(ExpectedConditions.alertIsPresent());
 			alert.sendKeys(TextToEnter);
-			// acceptAlert();
-
+			
 			if (accept) {
 				alert.accept();
 			} else {

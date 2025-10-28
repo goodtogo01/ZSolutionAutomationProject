@@ -4,31 +4,190 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Login - zSolution</title>
-  <link rel="stylesheet" href="css/login.css" />
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
   <div class="login-container">
-    <h2>Login to zSolution</h2>
+    <h2 id="formTitle">Login to zSolution</h2>
 
     <form id="loginForm" novalidate>
       <input type="text" id="username" name="username" placeholder="Username" autocomplete="username" />
       <input type="password" id="password" name="password" placeholder="Password" autocomplete="current-password" />
-      <p id="error-message" class="error" aria-live="polite"></p>
+      <p id="error-message" class="error"></p>
       <button type="submit" id="loginBtn">Login</button>
+      <p><a href="#" id="toggleSignup">New user? Sign up</a></p>
     </form>
 
-    <div class="credentials" aria-hidden="false">
+    <form id="signupForm" novalidate style="display: none;">
+      <input type="text" id="signupUsername" placeholder="Username" required />
+      <input type="password" id="signupPassword" placeholder="Password" required />
+      <input type="text" id="signupFullName" placeholder="Full Name" required />
+      <input type="email" id="signupEmail" placeholder="Email" required />
+      <input type="text" id="signupRole" placeholder="Role" required />
+      <p id="signupMessage" class="error"></p>
+      <button type="submit">Sign Up</button>
+      <p><a href="#" id="toggleLogin">Back to Login</a></p>
+    </form>
+
+    <div class="credentials">
       <strong>Test Login Credentials:</strong>
-      <ul>
-        <li><b>admin</b> / test123</li>
-        <li><b>shuhan</b> / pass123</li>
-        <li><b>miraj</b> / hello123</li>
-        <li><b>rayhan</b> / ray456</li>
-        <li><b>raja</b> / king789</li>
-      </ul>
+      <ul id="credentialsList"></ul>
     </div>
   </div>
 
-  <script src="js/login.js"></script>
+  <script>
+    document.addEventListener("DOMContentLoaded", async () => {
+      const loginForm = document.getElementById("loginForm");
+      const signupForm = document.getElementById("signupForm");
+      const errorMessage = document.getElementById("error-message");
+      const signupMessage = document.getElementById("signupMessage");
+      const toggleSignup = document.getElementById("toggleSignup");
+      const toggleLogin = document.getElementById("toggleLogin");
+      const formTitle = document.getElementById("formTitle");
+      const credentialsList = document.getElementById("credentialsList");
+
+      // ✅ Default (built-in) users — no external file needed
+      const defaultUsers = [
+        {
+          username: "admin",
+          password: "test123",
+          fullName: "Admin User",
+          email: "admin@zsolution.com",
+          role: "Administrator"
+        },
+        {
+          username: "shuhan",
+          password: "pass123",
+          fullName: "Shuhan Shahadat",
+          email: "shuhan@zsolution.com",
+          role: "Developer"
+        },
+        {
+          username: "miraj",
+          password: "hello123",
+          fullName: "Shahadat Miraj",
+          email: "miraj@zsolution.com",
+          role: "Analyst"
+        },
+        {
+          username: "rayhan",
+          password: "ray456",
+          fullName: "Rayhan Siddiqui",
+          email: "rayhan@zsolution.com",
+          role: "Tester"
+        },
+        {
+          username: "raja",
+          password: "king789",
+          fullName: "Saidur Raja",
+          email: "raja@zsolution.com",
+          role: "Manager"
+        },
+        {
+          username: "",
+          password: "king789",
+          fullName: "Saidur Raja",
+          email: "raja@zsolution.com",
+          role: "Manager"
+        }
+      ];
+
+      let allUsers = [];
+
+      // ✅ Load all users (default + saved signups)
+      function loadUsers() {
+        const storedUsers = JSON.parse(localStorage.getItem("users")) || [];
+        allUsers = [...defaultUsers, ...storedUsers];
+        renderCredentials();
+      }
+
+      // ✅ Render credentials list (for testing/demo)
+      function renderCredentials() {
+        credentialsList.innerHTML = "";
+        allUsers.forEach((user) => {
+          const li = document.createElement("li");
+          li.innerHTML = `<b>${user.username}</b> / ${user.password}`;
+          credentialsList.appendChild(li);
+        });
+      }
+
+      // Initial load
+      loadUsers();
+
+      // -------- LOGIN --------
+      loginForm.addEventListener("submit", (e) => {
+        e.preventDefault();
+        errorMessage.textContent = "";
+
+        const username = document.getElementById("username").value.trim();
+        const password = document.getElementById("password").value.trim();
+
+        const matchedUser = allUsers.find(
+          (u) => u.username === username && u.password === password
+        );
+
+        if (matchedUser) {
+          localStorage.setItem("loggedIn", "true");
+          localStorage.setItem("user", JSON.stringify(matchedUser));
+          window.location.href = "index.html";
+        } else {
+          errorMessage.textContent = "Invalid username or password!";
+        }
+      });
+
+      // -------- SIGNUP --------
+      signupForm.addEventListener("submit", (e) => {
+        e.preventDefault();
+        signupMessage.textContent = "";
+
+        const newUser = {
+          username: document.getElementById("signupUsername").value.trim(),
+          password: document.getElementById("signupPassword").value.trim(),
+          fullName: document.getElementById("signupFullName").value.trim(),
+          email: document.getElementById("signupEmail").value.trim(),
+          role: document.getElementById("signupRole").value.trim(),
+        };
+
+        // Check if username already exists
+        if (allUsers.find((u) => u.username === newUser.username)) {
+          signupMessage.textContent = "Username already exists!";
+          signupMessage.style.color = "red";
+          return;
+        }
+
+        // Save to localStorage
+        const localUsers = JSON.parse(localStorage.getItem("users")) || [];
+        localUsers.push(newUser);
+        localStorage.setItem("users", JSON.stringify(localUsers));
+
+        // Update list
+        allUsers.push(newUser);
+        renderCredentials();
+
+        signupMessage.textContent = "Signup successful! You can now login.";
+        signupMessage.style.color = "green";
+        signupForm.reset();
+      });
+
+      // -------- TOGGLE FORMS --------
+      toggleSignup.addEventListener("click", (e) => {
+        e.preventDefault();
+        loginForm.style.display = "none";
+        signupForm.style.display = "flex";
+        toggleSignup.style.display = "none";
+        toggleLogin.style.display = "block";
+        formTitle.textContent = "Sign Up for zSolution";
+      });
+
+      toggleLogin.addEventListener("click", (e) => {
+        e.preventDefault();
+        signupForm.style.display = "none";
+        loginForm.style.display = "flex";
+        toggleSignup.style.display = "block";
+        toggleLogin.style.display = "none";
+        formTitle.textContent = "Login to zSolution";
+      });
+    });
+  </script>
 </body>
 </html>
